@@ -1,6 +1,5 @@
 # Android四种异步处理消息机制
 
-*参考 `https://developer.android.com/guide/components/processes-and-threads.html?hl=zh-cn#IPC `*
 
 ### `View.postXXX()` View的post类型方法是View的异步通信的方法。
 
@@ -95,7 +94,9 @@ MessageQueue 是个队列，先进先出，负责存放多个Message对象.
 
 ## 以上其他三种方法实质上都是用Handler实现的，只不过都将Handler封装了一下。
 
-类似总结：`http://www.jianshu.com/p/8e756803211f`
+###参考 [官方文档](https://developer.android.com/guide/components/processes-and-threads.html?hl=zh-cn#IPC)
+
+###[类似总结](http://www.jianshu.com/p/8e756803211f)
 
 
 
