@@ -32,10 +32,10 @@
 	-keep public class MyClass
 
 
-[官方文档之用户指南](https://developer.android.com/studio/build/shrink-code.html,"压缩代码和资源")
+[官方文档之用户指南](https://developer.android.com/studio/build/shrink-code.html "压缩代码和资源")
 
-[ProGuard手册](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#,"点击查看ProGuard手册")
+[ProGuard手册](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html# "点击查看ProGuard手册")
 
-[Android ProGuard混淆](http://www.jianshu.com/p/60e82aafcfd0,)
+[Android ProGuard混淆](http://www.jianshu.com/p/60e82aafcfd0)
 
 
