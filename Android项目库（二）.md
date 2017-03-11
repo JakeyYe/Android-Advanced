@@ -164,3 +164,12 @@ jsoup是一款Java的HTML解析器，可直接解析某个URL地址，HTML文本
 [使用 jsoup 对 HTML 文档进行解析和操作](https://www.ibm.com/developerworks/cn/java/j-lo-jsouphtml/)
 
 [Java上的jQuery？解析HTML利器—Jsoup](http://www.cnblogs.com/mokafamily/p/3558620.html)
+
+##Lottie
+ 
+`Lottie`是`Airbnb`开源的动画项目，支持`Android，iOS，ReactNative`三个平台，`Lottie`是将`json`文件转化为动画，使动画的制作更加简单了。该项目展示的所有动画都是在`After Effects`创建的，通过`Bodymovin`插件将在`After Effects`创建的动画导出为`json`文件，如果通过该开源库将`json`文件展示出来,就是动画效果了。`Lottie`使用`json`文件来作为动画数据源，`json`文件是通过[Bodymovin](https://github.com/bodymovin/bodymovin)插件导出的，json文件是描述每个元素的动画执行路径和执行时间，Lottie的功能就是读取这些数据，然后绘制到屏幕上。
+
+	添加依赖 compile 'com.airbnb.android"lottie:1.5.0'
+
+
+参考 [从json文件到炫酷动画-Lottie实现思路和源码分析](http://www.jianshu.com/p/81be1bf9600c)

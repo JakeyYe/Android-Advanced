@@ -4,7 +4,10 @@
 
 	在MVP模式里通常包含4各元素：
     1）View:负责绘制UI元素，与用户进行交互（在Android中体现为Activity）；
-	2）View interface:需要View实线的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试；
+	2）View interface:需要View实现的接口，View通过View interface与Presenter进行交互，降低耦合，方便进行单元测试；
 	3）Model:负责存储，检索，操作数据（有时也实现一个Model interface用来降低耦合）；
 	4）Presenter：作为View与Model交互的中间纽带，负责处理与用户交互的逻辑。
+
+**感觉MVP架构模式是有逻辑可循的，是一套有着基本标准的架构模式，所以完全可以模仿着模式一步步来码代码，是有迹可循的。**
+
 参考 [在Android开发中使用MVP模式](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0202/2397.html)

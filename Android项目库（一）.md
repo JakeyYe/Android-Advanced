@@ -25,7 +25,7 @@ RxJava四个基本概念：
 ####RxJava内置Scheduler，使用Scheduler管理线程
 - Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。
 - Schedulers.newThread(): 总是启用新线程，并在新线程执行操作。
-Schedulers.io(): I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，区别在于 io() 的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程。
+- Schedulers.io(): I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，区别在于 io() 的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程。
 - Schedulers.computation(): 计算所使用的 Scheduler。这个计算指的是 CPU 密集型计算，即不会被 I/O 等操作限制性能的操作，例如图形的计算。这个 Scheduler 使用的固定的线程池，大小为 CPU 核数。不要把 I/O 操作放在 computation() 中，否则 I/O 操作的等待时间会浪费 CPU。
 - 另外， Android 还有一个专用的 AndroidSchedulers.mainThread()，它指定的操作将在 Android 主线程运行
 
@@ -170,34 +170,36 @@ POST to a SERVER 提交数据到服务端（提交表单或上传文件）
 
 ###Butterknife
 	ButterKnife是一个Android系统的View注入框架，能够通过‘注解’的方式来绑定View的属性或方法。
-总的来说，ButterKnife 有以下使用：
+总的来说，`ButterKnife` 有以下使用：
 
-- View 绑定
-- Resource 绑定
-- 非 Activity 绑定
-- View List 绑定
-- Listener 绑定
+- `View` 绑定
+- `Resource` 绑定
+- `非 Activity` 绑定
+- `View List` 绑定
+- `Listener` 绑定
 
 一个注解框架，使用后可以减少一些代码量
 
 添加依赖
-这里以 Android Studio Gradle 为例，为项目添加 ButterKnife，注意两个步骤都要完成：
+这里以 `Android Studio Gradle` 为例，为项目添加 `ButterKnife`，注意两个步骤都要完成：
 
-1. Project 的 build.gradle 添加：
+1.` Project 的 build.gradle `添加：
   ` dependencies {
    classpath 'com.jakewharton:butterknife-gradle-plugin:8.5.1'
    }`
 
-2. App 的 build.gradle 添加：
+2. `App 的 build.gradle `添加：
 
-	apply plugin: 'com.jakewharton.butterknife'
+	`apply plugin: 'com.jakewharton.butterknife'`
 
-	dependencies {
-	compile 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-	}
+	`dependencies {`
 
-Android Butterknife Zelezny这个插件参考[这里](http://www.tuicool.com/articles/Q3mmay/)
+	`compile 'com.jakewharton:butterknife:8.5.1'`
+
+    `annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+	}`
+
+`Android Butterknife Zelezny`这个插件参考[这里](http://www.tuicool.com/articles/Q3mmay/)
 
 
 ### Gson

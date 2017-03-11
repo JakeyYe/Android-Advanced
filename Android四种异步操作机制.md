@@ -7,9 +7,32 @@
 
 表示的方法作用都是`Causes the Runnable to be added to the message queue`
 
-将该线程加到主线程的消息队列中。
+将该线程作为一个消息事件加到主线程的消息队列中。
 
-其原理是把Runnable回调函数，post到主线程的消息队列里去，并将其包装成一个android有效的message对象，供位于主线程中的handler来处理，从而实现的主线程中更新这一view。
+其原理是把Runnable回调函数，post到主线程的消息队列里去，并将其包装成一个android有效的message对象，供位于主线程中的handler来处理，从而实现的主线程中更新这一view，这个handler是每个View控件中都有的Handler对象。
+	
+	/**
+     * <p>Causes the Runnable to be added to the message queue.
+     * The runnable will be run on the user interface thread.</p>
+     *
+     * @param action The Runnable that will be executed.
+     *
+     * @return Returns true if the Runnable was successfully placed in to the
+     *         message queue.  Returns false on failure, usually because the
+     *         looper processing the message queue is exiting.
+     *
+     * @see #postDelayed
+     * @see #removeCallbacks
+     */
+    public boolean post(Runnable action) {
+        final AttachInfo attachInfo = mAttachInfo;
+        if (attachInfo != null) {
+            return attachInfo.mHandler.post(action);//mHandler是每个View控件都有的Handler对象
+        }
+        // Assume that post will succeed later
+        ViewRootImpl.getRunQueue().post(action);
+        return true;
+    }
 
 ### Android  Handler异步消息处理机制
 
@@ -74,7 +97,7 @@ MessageQueue 是个队列，先进先出，负责存放多个Message对象.
 
 ### 使用`AsyncTask`进行异步操作
 
-`AsyncTask` 允许对用户界面执行异步操作。它会先阻塞工作线程中的操作，然后在 UI 线程中发布结果，而无需您亲自处理线程和/或处理程序。
+`AsyncTask` 允许对用户界面执行异步操作。它会先阻塞工作线程中的操作，然后在 UI 线程中发布结果，而无需您亲自处理线程或处理程序。
 
 要使用它，必须创建 `AsyncTask` 子类并实现 `doInBackground()` 回调方法，该方法将在后台线程池中运行。要更新 UI，必须实现 `onPostExecute()` 以传递 `doInBackground()` 返回的结果并在 UI 线程中运行，这样，您即可安全更新 UI。稍后，您可以通过从 UI 线程调用 `execute()` 来运行任务。
 
@@ -90,7 +113,22 @@ MessageQueue 是个队列，先进先出，负责存放多个Message对象.
 
 ### Activity.runOnUiThread(Runnable)
 
-这也是Android提供的一中异步更新UI组件的方法。在UI线程上运行指定的操作，如果当前线程是UI线程，则立即执行动作。如果当前线程不是UI线程，则将操作发布到UI线程的事件队列。
+这也是Android提供的一中异步更新UI组件的方法。在UI线程上运行指定的操作，如果当前线程是UI线程，则立即执行动作。如果当前线程不是UI线程，则将操作发布到UI线程的事件队列中运行。
+	
+	/**
+     * Runs the specified action on the UI thread. If the current thread is the UI
+     * thread, then the action is executed immediately. If the current thread is
+     * not the UI thread, the action is posted to the event queue of the UI thread.
+     *
+     * @param action the action to run on the UI thread
+     */
+    public final void runOnUiThread(Runnable action) {
+        if (Thread.currentThread() != mUiThread) {
+            mHandler.post(action);
+        } else {
+            action.run();
+        }
+    }
 
 ## 以上其他三种方法实质上都是用Handler实现的，只不过都将Handler封装了一下。
 
