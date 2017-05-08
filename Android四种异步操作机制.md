@@ -46,6 +46,17 @@ Message 表示消息对象
 
 MessageQueue 是个队列，先进先出，负责存放多个Message对象.
 
+####Handler源码解析原理
+	Handler对象内部都会持有与之关联的Looper对象和MessageQueue对象（MessageQueue对象就是在Looper类中创建的），
+	Handler发送消息会调用Handler内部的MessageQueue对象的enqueueMessage()方法，在这个方法中会将当前的这个Handler
+	对象与这个要发送的Message关联在一起，Message类中也有一个Handler变量的，这样就将消息放入Handler内部的这个
+	MessageQueue对象中，这个MessageQueue对象也就是Looper中的MessageQueue对象，而Handler内部的这个Looper对象的loop()方法
+	会去自身内部的MessageQueue对象中循环取消息，取出消息就会调用这个消息内部的Handler对象（Message类中有一个与之
+	关联的Handler对象，也就是持有Looper，MessageQueue的Handler对象）的dispatchMessage()方法，这样消息就传递到了
+	最开始发送这个Message的Handler对象了，这样最后就在这个Handler对象中处理这个消息了。
+
+可以看看[张鸿洋关于异步消息Handler的总结](http://blog.csdn.net/lmj623565791/article/details/38377229)
+
 ####Handler的两种使用方式
 
 	一， 定义一个Handler类，用于处理接受到的Message。

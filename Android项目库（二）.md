@@ -4,8 +4,35 @@
 [多个开源库的介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0813/3296.html)
 ###greenDao
 加上下面那两个，这三个都是关于数据库的库。
+###greenDao 3.0 原理解析：
+	greenDao是Android的ORM框架，ORM就是对象关系映射（Object Relation Mapping）。它的实现思想就是将关系数据库中表的数据
+	映射为对象，以对象的形式展现，一个类对应数据库中的一张表，该类的一个对象对应表中的一行数据，这样开发人员就可以把数据库的
+	操作转化为对这些对象的操作。因此它的目的就是为了方便开发人员用面向对象的思想来实现数据库的操作。
 
+	greenDao 3.0 会通过一个插件来生成代码，这个插件会去浏览所有被@Entity注解的类去收集表信息，并生成三个类，DaoSession,DaoMaster,和所有的Dao类。
 
+###greenDao 3.0 的使用教程：
+	1，在应用的build.gradle文件中添加下面的内容：
+		classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+	2，在Module的build.gradle文件中，添加下面的内容：
+		apply plugin: 'org.greenrobot.greendao'
+	
+		//greenDao依赖
+    	compile 'org.greenrobot:greendao:3.2.2'
+	
+	3，可以添加下面greenDao配置：
+		greendao {
+          schemaVersion 1
+		  //通过gradle插件生成的数据库相关文件的包名，默认为你的entity所在的包名
+          daoPackage 'com.example.mrye.greendaoexample.db'
+          //设置自动生成文件的目录路径，要和上面的设置一起使用
+          targetGenDir 'src/main/java'
+     }
+
+[博客介绍](http://blog.csdn.net/u012124438/article/details/52139883)
+[教程一](https://www.cnblogs.com/whoislcj/p/5651396.html)
+[教程二](http://www.imooc.com/article/15744?block_id=tuijian_wz)
 ###ormLite
 
 
@@ -173,3 +200,8 @@ jsoup是一款Java的HTML解析器，可直接解析某个URL地址，HTML文本
 
 
 参考 [从json文件到炫酷动画-Lottie实现思路和源码分析](http://www.jianshu.com/p/81be1bf9600c)
+
+##Stetho
+`Stetho`是`FaceBook`开发的`Android`调试工具，它可以通过Chrome的开发者工具来辅助`Android`开发。
+
+[Stetho的使用介绍](http://www.jianshu.com/p/c03a8959d1a5)
