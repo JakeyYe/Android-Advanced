@@ -24,8 +24,14 @@
 
 	果的，只不过在前者在主线程中执行，而后者在线程池中的线程中执行的。
 
+
+###思想记录：
+	OkHttp3，网络请求库，同步请求RealCall.execute()和异步请求RealCall.enqueue(),请求任务都是交给Dispatcher调度请求任务的处理，请求通过一条拦截链，每一个拦截器处理一部分工作，最后一个拦截器，完成获取请求任务的响应，会将响应沿着拦截链向上传递。
+
 ###[OkHttp源码解析](http://www.dieyidezui.com/okhttp-3-4-x-yuan-ma-pou-xi/)
 
 ###[根据Interceptor分析OKHttp](https://www.zybuluo.com/Warning1943/note/699633)
 
-###[OkHttp3源码分析](http://www.jianshu.com/p/aad5aacd79bf)
+###[OkHttp 3.7源码分析-云栖社区](https://m.aliyun.com/yunqi/articles/78105?spm=5176.100239.0.0.9MCZtW)
+
+###[深入浅出OkHttp源码](https://www.diycode.cc/topics/640)
