@@ -95,16 +95,11 @@
     compile 'com.android.support:support-v4:21.0.3'
     //主Module依赖的library
     compile project(':Recognizer')
-    compile project(':contactcard')
-    compile project(':sticker')
+    //直接添加依赖
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.facebook.stetho:stetho:1.4.1'
+    //单个添加依赖的.jar文件
     compile files('libs/MiPush_SDK_Client_3_1_2.jar')
-    compile project(':IMKit')
-    compile project(':CallKit')
-    compile project(':RedPacket')
+    
 	//主Module引用的aar文件
     compile(name: 'HMS-SDK-2.4.0.300', ext: 'aar')
 	}
-
-	repositories { flatDir { dirs 'aars' } }

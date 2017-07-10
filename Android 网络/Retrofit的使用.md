@@ -28,6 +28,19 @@
 - `CallAdapter` (执行请求并管理)
 - `Converter` (解析数据并转换为 `T` )
 
+
+	（`Converter`是对于`Call(T`)中的`T`的转换，而`CallAdapter`则可以对`Call`转换，这样的话`Call<T>`中的`Call`也是可以被替换的，而返回值的类型就决定你后续的处理程序逻辑。）
+
+	Retrofit支持多种converters:
+
+	`Gson: com.squareup.retrofit2:converter-gson`
+	`Jackson: com.squareup.retrofit2:converter-jackson`
+	`Moshi: com.squareup.retrofit2:converter-moshi`
+	`Protobuf: com.squareup.retrofit2:converter-protobuf`
+	`Wire: com.squareup.retrofit2:converter-wire`
+	`Simple XML: com.squareup.retrofit2:converter-simplexml`
+	`Scalars (primitives, boxed, and String):``com.squareup.retrofit2:converter-scalars`
+
 ###Retrofit的使用三步：
 	1，创建Retrofit实例
 	2，接口定义

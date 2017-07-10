@@ -1,4 +1,7 @@
-#`Gradle`
+#`Gradle for Android`
+	Android Applications使用gradle构建，gradle是一门高级语言并广泛用于Java中，提供的Android插件为Android app开发提供了
+	很多的功能
+[Gradle for Android](http://www.jianshu.com/p/cfa802396c6a)
 
 ###1，一个`Android`项目文件中至少有两个`build.gradle`文件，其中一个是项目全局的`build.gradle`文件，其他的都是`Module`的`build.gradle`文件。
 

@@ -12,15 +12,55 @@
 
 
 Context context=this.getApplicationContext();
-context.getCacheDir();//获取/data/data/<package name>/cache目录
-
-context.getDatabasePath("数据库名");//获取具体数据库存放目录，在databases目录之下
-context.getFilesDir();//获取/data/data/<package name>/files目录
 
 
-//获取自身apk的路径
-context.getPackageCodePath();
-context.getPackageResoucePath();
+context.getCacheDir();//获取/data/user/0/<Package Name>/cache 目录
+
+context.getDatabasePath("数据库名");//获取具体数据库存放目录，在databases目录之下,获取的路径为 /data/user/0/<Package Name>/databases/数据库名 
+context.getFilesDir();//获取的路径 /data/user/0/<Package Name>/files 目录
+
+
+//获取自身apk的路径，下面两个返回的路径是一样的
+
+	context.getPackageCodePath();
+	context.getPackageResoucePath();
 
 参考： [Android应用程序的数据存放目录解说](http://blog.csdn.net/yihui823/article/details/6722456)
 
+
+##要注意Context和Environment这两个与内部存储和外部存储有关的类
+如果按照路径特征，我们可以将文件存储的路径分为量大类，一类是路径中包含包名的，另一类是路径中不包含包名的，含有包名的路径，因为是和某个App有关，所以对这些文件夹的访问都是通过调用Context里的方法，而不包含包名的路径，和具体的某一个App无关，我们可以通过Environment中的方法来访问。
+
+[android中的文件操作详解以及内部存储和外部存储](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2013/0923/1557.html)
+
+[Android Environment类详解](http://blog.csdn.net/u010542873/article/details/51351708)
+
+###[彻底理解Android内部存储和外部存储](http://blog.csdn.net/u012702547/article/details/50269639)
+
+
+###Android系统文件目录结构
+	根目录 ： /
+
+	/data
+     /data 该目录存放所有安装应用的包（包名就是应用的包名）
+          /应用包名 ------该文件夹下的文件都是该应用私有的（内部存储目录）
+                   /cache  -------应用内缓存文件
+		   /files  -------应用内普通文件
+		   /databases -----应用内数据库文件
+		   /shared_prefs --应用内的SharedPreferences文件
+
+
+
+     /app 该目录存放着我们安装的的app的apk文件
+
+	/mnt
+
+	/storage ------------外部存储目录
+	/sdcard(文件名可能不是这个，国产ROM可能会该名称)
+        	/DCIM     (XX公有目录--系统我们创建的文件夹)
+        	/Download （下载公有目录--系统为我们创建的文件夹）
+        	/Movies    (电影公有目录--系统为我们创建的文件夹)
+        	/Music     （音乐公有目录--系统为我们创建的文件夹）
+        	/Picture   （图片公有目录--系统为我们创建的文件夹）
+		/android(Android)-------私有目录
+			/data  -----该文件夹下以包名为文件夹名作为每个应用的外部存储来存放文件
