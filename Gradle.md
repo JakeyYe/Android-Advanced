@@ -1,11 +1,19 @@
-#`Gradle for Android`
-	Android Applications使用gradle构建，gradle是一门高级语言并广泛用于Java中，提供的Android插件为Android app开发提供了
-	很多的功能
+# `Gradle for Android`
+	Android Applications使用gradle构建，gradle是一门高级语言并广泛用于Java中，提供的Android插件为Android app开发提供了很多的功能
+
+	Gradle是以Groovy语言为基础，面向Java应用为主，基于DSL(领域特定语言)语法的自动化构建工具：
+	1，Gradle也是一门语言
+	2，Gradle是一个自动化构建工具
+[Doc/2\_Gradle语法基础解析\.md at master · D\-clock/Doc](https://github.com/D-clock/Doc/blob/master/Android/Gradle/2_Gradle%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%A7%A3%E6%9E%90.md)
+
 [Gradle for Android](http://www.jianshu.com/p/cfa802396c6a)
 
-###1，一个`Android`项目文件中至少有两个`build.gradle`文件，其中一个是项目全局的`build.gradle`文件，其他的都是`Module`的`build.gradle`文件。
+[Gradle插件用户指南（中文版）](http://rinvay.github.io/android/2015/03/26/Gradle-Plugin-User-Guide%28Translation%29/)
 
-###2，`gradle`的各部分：
+[第一篇：groovy对DSL的语法支持 \- 身带吴钩 \- 博客园](http://www.cnblogs.com/chenjie0949/p/4755389.html)
+### 1，一个`Android`项目文件中至少有两个`build.gradle`文件，其中一个是项目全局的`build.gradle`文件，其他的都是`Module`的`build.gradle`文件。
+
+### 2，`gradle`的各部分：
 
   - `apply plugin`领域：表示`Gradle`所引入的插件。在`Module`的`build.gradle`文件的最顶部声明`apply plugin:``com.android.application`，表示该`Module`是`Android`项目的主`Module`,是一个`Android Application`,而声明为`apply plugin:``com.android.library`表示该`Module`为一个库（`Module`）。
 
@@ -17,10 +25,10 @@
   - `signingConfigs{...}`:位于`android{...}`内，签名配置。
   - `proguardFiles`这部分有两段，前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，免去了我们一部分混淆工作，该文件的目录是再`/tool/proguard/proguard-android.txt`，后一段是我们项目里的自定义的混淆文件，目录在`app/proguard-rules.pro`，在这个文件里你可以声明一些第三方依赖的一些混淆规则，最终的混淆结果是由这两部分文件的共同作用的。
 
-###更多参考[官方文档](http://google.github.io/android-gradle-dsl/current/index.html)
+#### 更多参考[官方文档](http://google.github.io/android-gradle-dsl/current/index.html)
 
-###3,构建全局配置
-  声明全局参数：在项目全局的`build.gradle`文件中，通过`ext`领域可以指定全局的配置信息，如下所示：
+### 3,构建全局配置(两种方式)
+  3.1 声明全局参数：在项目全局的`build.gradle`文件中，通过`ext`领域可以指定全局的配置信息，如下所示：
 
 	ext {
        compileSdkVersion =24
@@ -34,5 +42,9 @@
        compileSdkVersion rootProject.ext.compileSdkVersion
 	}
 
+
+3.2 在gradle.properties文件声明全局参数，然后调用
 	
-###深入了解参考[Gradle for Android 问题总结](http://www.jianshu.com/p/9dcec4a14c52#)
+### 深入了解参考[Gradle for Android 问题总结](http://www.jianshu.com/p/9dcec4a14c52#)
+
+### [buildscript和allprojects的作用和区别是什么？ \- 简书](http://www.jianshu.com/p/ee57e4de78a3)

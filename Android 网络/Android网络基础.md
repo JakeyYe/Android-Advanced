@@ -7,7 +7,7 @@
 
 - 基于`TCP/IP`协议的网络通信（对应`IP`,端口号）
 
-  `SeverSocket  ,Socket`,`Socket`是支持`TCP/IP`协议的网络通信基本操作单元，`Socket`本身不算是协议，是操作系统为应用程序提供的一套针对`TCP或UDP`的编程接口`（API）`。
+  `Socket/SeverSocket`,`Socket`是支持`TCP/IP`协议的网络通信基本操作单元，`Socket`本身不算是协议，是操作系统为应用程序提供的一套针对`TCP或UDP`的编程接口`（API）`。
 
 - 使用`URLConnection`访问网络资源（使用URL统一资源定位符）
 
@@ -21,7 +21,7 @@
 
   `HttpClient` 就是一个增强的`HttpURLConnection`, `HttpClient`是`Apache`公司提供的库。
 
-	在Android 6.0版本中，HttpClient库被移除了，HttpURLConnection是以后唯一的选择了。
+	在Android 6.0版本中，HttpClient库被移除了，只有HttpURLConnection,OkHttp可以使用了，后者更是重点。
 
 
 ## Socket连接和HTTP连接
@@ -35,8 +35,11 @@
 ## Socket连接和TCP/IP连接
 	TCP/IP 只是一个协议栈，就像操作系统的运行机制，必须要具体实现，同时还要提供对外的操作接口。这个就像操作系统会提供标准的
 	编程接口，比如 Win 32 编程接口一样，TCP/IP 也要提供可供程序员做网络开发所用的接口，这就是 Socket 编程接口。
-	实际上，传输层的TCP是基于网络层的IP协议，而应用层的HTTP	协议又是基于传输层的TCP协议，而Socket本身不算是协议，就是上面
+	实际上，传输层的TCP是基于网络层的IP协议，而应用层的HTTP协议又是基于传输层的TCP协议，而Socket本身不算是协议，就是上面
 	所说的，它只是提供了一个针对TCP或者UDP编程的接口（API）。
+
+###[Android中的HttpURLConnection详解](http://blog.csdn.net/iispring/article/details/51474529)
+
 ###参考 
 ###[Android网络通信](http://www.jianshu.com/p/0e5383721145)
 ###[参考二](http://zhoujianghai.iteye.com/blog/1195988)

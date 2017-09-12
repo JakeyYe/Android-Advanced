@@ -1,20 +1,21 @@
 	
-##[Android打包那些事](http://www.jayfeng.com/2015/11/07/Android%E6%89%93%E5%8C%85%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/)
+## [Android打包那些事](http://www.jayfeng.com/2015/11/07/Android%E6%89%93%E5%8C%85%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/)
 
-##[详解build.gradle](http://ask.android-studio.org/?/article/40)
+## [详解build.gradle](http://ask.android-studio.org/?/article/40)
 
-##[安卓集成发布详解（二）](http://frank-zhu.github.io/android/2015/06/15/android-release_app_build_gradle/)
+## [安卓集成发布详解（二）](http://frank-zhu.github.io/android/2015/06/15/android-release_app_build_gradle/)
 	apply plugin: 'com.android.application'//表示此Module是一个可运行的应用程序，可以直接run
 	apply plugin: 'com.google.gms.google-services'
 	//apply plugin:'com.android.library'//则表示此Module是Android依赖库的一个工程，不可直接run
 	//apply plugin: 'java' //这表示此module是一个java项目，在此module中只能使用java的api
 
 	android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    	compileSdkVersion 23
+    	buildToolsVersion "23.0.3"
 
+	//默认apk配置
     defaultConfig {
-        applicationId "cn.rongcloud.im"
+        applicationId "包名"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 2017041917
@@ -32,17 +33,16 @@
     signingConfigs {
 		//签名信息文件一，可以有多个，在buildTyes中任意调用一个
         config {
-            storeFile file("rong.key")
-            storePassword "Amigo123"
-            keyAlias "RongCloud"
-            keyPassword "Amigo123"
+            storeFile file("xxxx")
+            storePassword "xxxx"
+            keyAlias "xxxx"
+            keyPassword "xxxx"
         }
     }
 	//配置相关文件位置
     sourceSets {
         main {
-            jni.srcDirs = []
-			////将jniLibs下的文件/子文件目录 定义到与'src'同级的'libs'目录下
+			//将libs文件夹下的文件转移到jniLibs文件夹下，原来的libs文件夹是用来存放.so和.jar文件的
             jniLibs.srcDirs = ['libs']
         }
     }
@@ -52,7 +52,7 @@
         exclude 'AndroidManifest.xml'
     }
 
-	//配置构建类型
+	//apk配置构建类型
     buildTypes {
         release {
 			 // 不显示Log
@@ -79,7 +79,6 @@
 	//设置Lint属性
     lintOptions {
         checkReleaseBuilds false
-
         abortOnError false
     }
     dexOptions {
@@ -88,18 +87,14 @@
 	}
 
 	dependencies {
-	//编译的文件树
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-	//主Module依赖的库
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:support-v4:21.0.3'
-    //主Module依赖的library
-    compile project(':Recognizer')
-    //直接添加依赖
-    compile 'com.android.support:multidex:1.0.1'
-    //单个添加依赖的.jar文件
-    compile files('libs/MiPush_SDK_Client_3_1_2.jar')
-    
-	//主Module引用的aar文件
-    compile(name: 'HMS-SDK-2.4.0.300', ext: 'aar')
+		//编译的文件树
+    	compile fileTree(include: ['*.jar'], dir: 'libs')
+		//主Module依赖的库,直接添加这个依赖即可
+    	compile 'com.android.support:appcompat-v7:21.0.3'
+    	//主Module依赖的library
+    	compile project(':xxxx')
+    	//单个添加依赖的.jar文件
+    	compile files('libs/xxxx.jar')   
+		//主Module引用的aar文件
+    	compile(name: 'xxxx', ext: 'aar')
 	}
