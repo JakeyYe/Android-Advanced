@@ -45,7 +45,7 @@
 
 ### ProGuard混淆语法规则
 	关键字：
-	keep
+	keep:保留类和类中的成员，防止它们被混淆或移除；
 	keepnames
 	keepclassmembers
 	keepclassmembersnames

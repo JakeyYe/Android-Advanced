@@ -1,17 +1,16 @@
-#关于Android项目要了解的库（二）
+## 关于Android项目要了解的库（二）
 
--------
 [多个开源库的介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0813/3296.html)
-###greenDao
+### greenDao
 加上下面那两个，这三个都是关于数据库的库。
-###greenDao 3.0 原理解析：
+### greenDao 3.0 原理解析：
 	greenDao是Android的ORM框架，ORM就是对象关系映射（Object Relation Mapping）。它的实现思想就是将关系数据库中表的数据
 	映射为对象，以对象的形式展现，一个类对应数据库中的一张表，该类的一个对象对应表中的一行数据，这样开发人员就可以把数据库的
 	操作转化为对这些对象的操作。因此它的目的就是为了方便开发人员用面向对象的思想来实现数据库的操作。
 
 	greenDao 3.0 会通过一个插件来生成代码，这个插件会去浏览所有被@Entity注解的类去收集表信息，并生成三个类，DaoSession,DaoMaster,和所有的Dao类。
 
-###greenDao 3.0 的使用教程：
+### greenDao 3.0 的使用教程：
 	1，在应用的build.gradle文件中添加下面的内容：
 		classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
 
@@ -33,14 +32,14 @@
 [博客介绍](http://blog.csdn.net/u012124438/article/details/52139883)
 [教程一](https://www.cnblogs.com/whoislcj/p/5651396.html)
 [教程二](http://www.imooc.com/article/15744?block_id=tuijian_wz)
-###ormLite
+### ormLite
 
 
-###Realm
+### Realm
 `Realm is a mobile database;a replacement for SQLite & ORMs.`是一个移动端的数据库。
 
 
-###PhotoView
+### PhotoView
 图片浏览缩放插件
 
 - 首先在工程的build.gradle上面添加JitPack仓库
@@ -58,7 +57,7 @@
 }```
 
 
-###富文本
+###	富文本
 
 使用该库可以方便地实现不同形式的文本
 
@@ -72,7 +71,7 @@
 
 参考[控件github页面介绍](https://github.com/Jude95/RollViewPager/blob/master/README_ch.md)
 
-###Android日志记录—Logger,Timber,logback
+### Android日志记录—Logger,Timber,logback
 - Logger
 	依赖 compile 'com.orhanobut:logger:1.15'支持更高级的Log,不过Log都是打印在控制台里，适合用于开发调试。
 
@@ -114,14 +113,14 @@
 - logback
 	支持将Log输出到更多地方。
 
-###现代I/O操作函数库okio
+### 现代I/O操作函数库okio
 okio作为java.io和java.nio的补充，是由square公司开发的一个函数库，使得开发者可以更方便的访问，存储和处理数据。一开始作为okhttp的一个组件存在，当然现在我们也可以单独使用它。
 
-###Android的Crash崩溃解决方案——Bugly的使用
+### Android的Crash崩溃解决方案——Bugly的使用
 腾讯的Bugly可以在app出现崩溃的时候上传错误信息，定位错误原因和语句，并且可以查看影响的用户数和程序Crash次数等等信息。
 参考[官方文档](https://bugly.qq.com/androidsdk)
 
-###Android Support Annotations注解
+### Android Support Annotations注解
 添加依赖 `compile 'com.android.support:support-annotations:20.0.0'`
 Support Library自身也使用这些注解。
 
@@ -134,14 +133,14 @@ Support Library自身也使用这些注解。
 - IntDef和StringDef注解
 
 
-###事件驱动编程库
+### 事件驱动编程库
 - EventBus,出自greenrobot。这个函数库专为Android而优化过，并具有某些高级特性和订阅者优先级。
 - Otto,出自Square。
 
-###EventBus3.0
+###	EventBus 3.0（已单独文件介绍）
 	添加依赖compile 'org.greenrobot:eventbus:3.0.0'
 `EventBus is a publish/subscribe event bus optimized for Android.`
-`EventBus`是一款针对Android优化的发布/订阅（`publish/subscribe`）事件总线。主要功能是替代`Intent,Handler,BroadCast`在`Fragment,Activity,Service,线程之间传递消息的`。
+`EventBus`是一款针对Android优化的发布/订阅（`publish/subscribe`）事件总线。主要功能是替代`Intent,Handler,Broadcast`在`Fragment,Activity,Service,线程之间传递消息的`。
 
 `EventBus`作为一个消息总线，有三个主要的元素：
 
@@ -173,14 +172,14 @@ Support Library自身也使用这些注解。
 
 参考`GitBook`中的`android-rd-senior-advanced.pdf`中的`Android`事件驱动编程（二）,已下载
 
-###html-textview
+###	html-textview
 `TextView to display simple HTML content，TextView`来显示简单的`HTML`内容.
 
 依赖：
 
 	compile 'org.sufficientlysecure:html-textview:3.1'
 
-##jsoup
+### jsoup
 	Java HTML Parser
 
 	添加依赖compile 'org.jsoup:jsoup:1.10.2'
@@ -192,7 +191,7 @@ jsoup是一款Java的HTML解析器，可直接解析某个URL地址，HTML文本
 
 [Java上的jQuery？解析HTML利器—Jsoup](http://www.cnblogs.com/mokafamily/p/3558620.html)
 
-##Lottie
+### Lottie
  
 `Lottie`是`Airbnb`开源的动画项目，支持`Android，iOS，ReactNative`三个平台，`Lottie`是将`json`文件转化为动画，使动画的制作更加简单了。该项目展示的所有动画都是在`After Effects`创建的，通过`Bodymovin`插件将在`After Effects`创建的动画导出为`json`文件，如果通过该开源库将`json`文件展示出来,就是动画效果了。`Lottie`使用`json`文件来作为动画数据源，`json`文件是通过[Bodymovin](https://github.com/bodymovin/bodymovin)插件导出的，json文件是描述每个元素的动画执行路径和执行时间，Lottie的功能就是读取这些数据，然后绘制到屏幕上。
 
@@ -201,7 +200,7 @@ jsoup是一款Java的HTML解析器，可直接解析某个URL地址，HTML文本
 
 参考 [从json文件到炫酷动画-Lottie实现思路和源码分析](http://www.jianshu.com/p/81be1bf9600c)
 
-##Stetho
+### Stetho
 `Stetho`是`FaceBook`开发的`Android`调试工具，它可以通过Chrome的开发者工具来辅助`Android`开发。
 
 [Stetho的使用介绍](http://www.jianshu.com/p/c03a8959d1a5)

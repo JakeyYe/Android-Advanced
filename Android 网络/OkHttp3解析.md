@@ -10,15 +10,17 @@
 
 2，`Dispatcher:`本质是异步请求的调度器，负责调度异步请求的执行，控制最大请求并发数和单个主机的最大并发数，并持有有一个线程池负责执行异步请求，对同步请求只是作统计操作。
 
-3，`Request：`网络请求，`Builder`模式实现
+3，`Request：`封装网络请求，就是构建请求参数（如url，header,请求方式，请求参数），`Builder`模式实现
 
 4，`Response`：网络请求对应的响应，`Builder`模式实现，真正的`Response`是通过`RealCall.getResponseWithInterceptorChain()`方法获取的。
 
-5，`ConnectionPool：Socket`连接池
+5，`Call`：是根据Request生成的一个具体的请求实例，且一个`Call`只能被执行一次。
 
-6，`Interceptor`：`Interceptor`可以说是`OkHttp`的核心功能，它就是通过`Interceptor`来完成监控管理，重写和重试请求的。
+6，`ConnectionPool：Socket`连接池
 
-7，`Cache:`可以自定义是否采用缓存，缓存形式是磁盘缓存，`DiskLruCache`。
+7，`Interceptor`：`Interceptor`可以说是`OkHttp`的核心功能，它就是通过`Interceptor`来完成监控管理，重写和重试请求的。
+
+8，`Cache:`可以自定义是否采用缓存，缓存形式是磁盘缓存，`DiskLruCache`。
 
 	不管是同步请求还是异步请求，都是通过RealCall.getResponseWithInterceptorChain()方法获取请求结
 

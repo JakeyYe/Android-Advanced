@@ -68,4 +68,5 @@ Android的样式开发，不需要全部记住，但要总结清楚，要会用�
 	2，来自兼容包（比如V7兼容包）
 	3，开发者自定义主题
 
-	compile 'com.android.support:appcompat-v7:21.0.3'中的21代表的是API 21，也就是该兼容包是API 21所推出的兼容包，所以你的应用若支持API 21以下的版本，则API 21以下版本所显示的主题Theme.AppCompat就是Theme.Material的主题，也就是使用Theme.AppCompat可以在API 21以下版本实现Theme.Material的主题风格。---AppCompat v21可以提供Android 5.0特性支持。
+	compile 'com.android.support:appcompat-v7:21.0.3'中的21代表的是API 21，也就是该兼容包是API 21所推出的兼容包，所以你的应用若支持API 21以下的版本，则API 21以下版本所显示的主
+	题Theme.AppCompat就是Theme.Material的主题，也就是使用Theme.AppCompat可以在API 21以下版本实现Theme.Material的主题风格。---AppCompat v21可以提供Android 5.0特性支持。
