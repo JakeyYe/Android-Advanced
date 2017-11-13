@@ -7,6 +7,9 @@
 
 #### [Android 6.0运行时权限](http://blog.csdn.net/lmj623565791/article/details/50709663)
 
+## **如果使用原生代码自己申请权限的话，要注意在Activity与Fragment中申请权限调用的方法是不同的**
+[Android 6\.0 运行时权限处理 \| 阳春面的博客](https://appkfz.com/2015/11/04/android-6-permission/)
+
 ### 每款Android应用都在访问受限的沙盒中运行。如果应用需要使用其沙盒外的资源或信息，则必需请求相应的权限。可以在清单文件中列出相应的权限，声明应用需要此权限。
 ###根据权限的敏感度，系统可能会自动授予权限，或者需要由设备用户对权限请求进行许可。例如，如果应用请求打开手电筒的权限，系统将自动授予，但如果是需要读取用户联系人，系统会要求用户授权。用户需要在安装应用时（运行Android 5.1,API 22或更低版本的设备）或者运行应用（运行Android 6.0,API 23或更高版本的设备）时授予权限，具体取决于平台设备。
 
@@ -23,7 +26,3 @@
 ##[使用系统权限](https://developer.android.google.cn/training/permissions/index.html?hl=zh-cn)
 
 ## [权限的最佳做法](https://developer.android.google.cn/training/permissions/best-practices.html?hl=zh-cn)
-
-## [博客介绍](http://blog.csdn.net/yanzhenjie1003/article/details/52503533?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
-
-## [Android Environment类详解](http://www.cnblogs.com/roger-yu/p/5592458.html)

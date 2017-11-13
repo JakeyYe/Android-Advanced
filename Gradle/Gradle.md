@@ -4,6 +4,9 @@
 	Gradle是以Groovy语言为基础，面向Java应用为主，基于DSL(领域特定语言)语法的自动化构建工具：
 	1，Gradle也是一门语言
 	2，Gradle是一个自动化构建工具
+
+	Gradle中有两个最基本的概念：project和task。Gradle里面的所有东西都基于这两个概念。project通常指一个项目，而task指构建过程中的任务。一次构建可以有1到n个project，而每个project有1
+	到n个task。
 [Doc/2\_Gradle语法基础解析\.md at master · D\-clock/Doc](https://github.com/D-clock/Doc/blob/master/Android/Gradle/2_Gradle%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%A7%A3%E6%9E%90.md)
 
 [Gradle for Android](http://www.jianshu.com/p/cfa802396c6a)
@@ -44,6 +47,46 @@
 
 
 3.2 在gradle.properties文件声明全局参数，然后调用
+
+3.3 在项目根目录下创建一个config.gradle文件，可用来保存项目配置常量，如果没有可直接在根目录下创建该文件，如这样的：
+	//config.gradle文件
+	ext {
+    plugins = [
+            library    : 'com.android.library',
+            application: 'com.android.application',
+            maven      : 'com.github.dcendents.android-maven',
+            bintray    : 'com.jfrog.bintray'
+    ]
+
+    android = [
+            applicationId    : "com.yanzhenjie.recyclerview.swipe.sample",
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.3",
+    ]
+
+    bintray = [
+            version       : "1.1.3"
+	]
+
+    dependencies = [
+            appCompat        : 'com.android.support:appcompat-v7:25.3.1'
+    ]
+	}
+
+	//build.gradle文件中使用config.gradle文件中的配置
+	apply plugin: rootProject.ext.plugins.application
+
+	android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+    }
+	}
+
+	dependencies {
+    compile rootProject.ext.dependencies.swipeRecyclerView
+	}
 	
 ### 深入了解参考[Gradle for Android 问题总结](http://www.jianshu.com/p/9dcec4a14c52#)
 

@@ -7,6 +7,12 @@
 	RxJava的异步实现，是通过一种扩展的观察者模式来实现的，RxJava作为一个工具库，使用的就是通用形式的观察者模式（相对对
 	应的是专用观察者模式，例如只用于监听控件点击的）。
 
+	RxJava异步处理，能够自如地切换线程，利用subscribeOn()和observeOn()来实现线程控制，让事件的产生和消费发生在指定的线程中。
+
+[用一张图解释RxJava中的线程控制 \- 泡在网上的日子](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0510/4249.html)
+
+![1462844481168297\.png \(1126×676\)](http:/www.jcodecraeer.com/uploads/20160510/1462844481168297.png)
+
 RxJava四个基本概念：
 
 `Observable`:可观察者，即被观察者
@@ -23,7 +29,9 @@ RxJava四个基本概念：
 - observeOn（）指定在事件传递（加工变换）和最终被处理（观察者）的发生在哪一个调度器。可指定多次，每次指定完都在下一步生效。
 - unsubscribeOn:有些Observable会依赖一些资源，当该Observable完成后释放这些资源。如果释放资源比较耗时的话，可以通过unsubscribeOn来释放资源代码执行的线程。
 
-*响应式代码的基本组成部分是Observable和Subscriber(事实上Observer才是最小的构建快，在实践中使用最多的是Subscriber),Observable发送消息，Subscribers用于消费消息。*
+**subscribeOn()作用的是ObservableOnSubscribe,observeOn()作用 的是Observer或Subscriber**
+
+**响应式代码的基本组成部分是Observable和Subscriber(事实上Observer才是最小的构建快，在实践中使用最多的是Subscriber),Observable发送消息，Subscribers用于消费消息。**
 
 ### RxJava内置Scheduler，使用Scheduler管理线程
 - Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。
@@ -54,3 +62,5 @@ Observable和Subscribers与它们之间的一系列转换步骤是相互独立�
 [RxJava Essentials 中文翻译版（已下载）]( https://rxjava.yuxingxin.com/)
 
 [某学姐博客](http://mouxuejie.com/blog/2016-03-27/rxjava-basis/)
+
+[一起来造一个RxJava，揭秘RxJava的实现原理 \- TellH的博客 \- CSDN博客](http://blog.csdn.net/tellh/article/details/71534704)

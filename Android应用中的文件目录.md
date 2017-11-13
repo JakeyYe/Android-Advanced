@@ -35,7 +35,7 @@ context.getFilesDir();//获取的路径 /data/user/0/Package Name/files 目录
 
 	//判断SD卡是否挂载
 	Environment.getEnternalStorageState().equals(Environment.MEDIA_MOUNTED);
-[Android Environment类详解](http://blog.csdn.net/u010542873/article/details/51351708)
+[Android Environment 类详解 \- Hi,出发了 \- 博客园](http://www.cnblogs.com/roger-yu/p/5592458.html)
 
 ### [彻底理解Android内部存储和外部存储](http://blog.csdn.net/u012702547/article/details/50269639)
 
