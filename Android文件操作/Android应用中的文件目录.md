@@ -2,7 +2,7 @@
 
 在data/data目录下存放每个应用程序的文件包目录，目录名就是应用程序在AndroidManifest.xml文件中定义的包。
 
-在/data/data/<package name>/每个目录下，一般有这么几个子目录：
+在/data/data/package name/每个目录下，一般有这么几个子目录：
 
 - databases:存放数据库；
 - cache:存放缓存数据；
@@ -70,4 +70,4 @@ Google建议我们APP的数据存储在外部存储的私有目录中该APP的�
         	/Picture   （图片公有目录--系统为我们创建的文件夹）
 			/android(Android)-------外部存储的私有目录
 				/data  -----该文件夹下以包名为文件夹名作为每个应用的*外部存储*来存放文件
-					/应有包名
+					/应有包名----该目录下存储应用在外部存储的一些数据

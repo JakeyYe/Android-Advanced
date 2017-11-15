@@ -30,6 +30,7 @@
 
 [再说Android RecyclerView局部刷新那个坑 \- 享受技术带来的快乐 \- CSDN博客](http://blog.csdn.net/jdsjlzx/article/details/52893469)
 
+[RecyclerView关于notifyItemRemoved的那点小事 \- Android移动开发技术文章\_手机开发 \- 红黑联盟](https://www.2cto.com/kf/201608/534945.html)
 
 #### RecyclerView中Item之间的分隔线，左右两边间隔问题？
 

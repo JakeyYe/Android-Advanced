@@ -7,3 +7,10 @@
 #### RippleDrawable涟漪背景效果的Drawable
 
 [Android L限制Ripple水波纹范围大小 \- CSDN博客](http://blog.csdn.net/kong92917/article/details/54291124)
+
+#### style和theme的使用
+ style属性设置范围小点，主要针对于控件View的，theme属性设置范围大点，主要针对Activity，Window的；
+
+ View控件使用style是不需要加前缀的,不需要加命名空间前缀，<TextView id="@+id/tv" style="@style/tvStyle"/>
+
+ 而theme的使用是要加命名空间的，如 android：theme="@style/AppTheme"/>

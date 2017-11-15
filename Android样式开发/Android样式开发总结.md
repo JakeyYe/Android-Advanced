@@ -6,8 +6,6 @@ Android的样式开发，不需要全部记住，但要总结清楚，要会用�
 	某些样式属性任何View元素都不提供支持，只能以主题形式应用，这些样式属性应用于整个窗口而非任何类型的View,这些属性在R.attr中是以window开头。
 
 
-
-
 ### [Android样式开发-小钢](https://keeganlee.me/post/android/20150830)
 
 ### Ripple标签，用于显示点击出现波纹效果

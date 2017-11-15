@@ -29,4 +29,11 @@
 
 - SimpleCursorAdapter与SimpleAdapter相似，只是他的数据源是Cursor类型而已。
 
-- BaseAdpter子类最常用的ListView数据适配器，通过继承BaseAdpter可以较灵活的实现数据的绑定，同时通过使用ViewHolder等可以很好的提高ListView的绘制效率。另一个很重要的原因，BaseAdpter类适配器绑定的Item布局中的子控件可以获取到触摸焦点，也就是说，通过这种方式，我们可以获取Item布局中一些对象的点击，长按，check等方法。
+- BaseAdpter子类最常用的ListView数据适配器，通过继承BaseAdpter可以较灵活的实现数据的绑定，同时通过使用ViewHolder等可以很好的提高ListView的绘制效率。另一个很重要的原因，BaseAdpter类适配器绑定的Item布局中的子控件可以获取到触摸焦点，也就是说，通过这种方式，我们可以获取Item布局中一些对象的点击，长按，check等方法,**而前面几种Adapter:ArrayAdapter,SimpleAdapter,SimpleCursorAdapter都是不能设置ListView Item的点击事件，只使用于展示一组数据**。
+
+
+### ListView中Item高度设置
+
+使用LayoutInflater.inflate(int resourceId,ViewGroup root,boolean attachToRoot);方法即可
+
+或者使用下面的方式 [android 关于listview item设置高度的问题解决方法 \- CSDN博客](http://blog.csdn.net/coderinchina/article/details/50670505)

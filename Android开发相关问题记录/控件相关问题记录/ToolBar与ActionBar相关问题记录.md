@@ -18,3 +18,15 @@ ToolBar使用过程：
 	mActionBar.setDisplayShowCustomEnable(true);//使自定义的普通View能在title上显示，即mActionBar.setCustomView能起作用
 
 [ToolBar、ActionBar与Menu的纠葛（以及navigationIcon、setHomeButtonEnabled、setDisplayHomeAsUpEnabled） \- 赛艇队长 \- 博客园](http://www.cnblogs.com/bellkosmos/p/5382272.html)
+
+#### Toolbar上动态设置Menu
+几个重要方法：
+
+- onOptinsItemSelected()--处理Menu中Item点击事件的
+- onCreateOptionsMenu()--这个方法只在第一次调用
+- onPrepareOptionsMenu()--这个方法会在**第一次调用**，和调用下面这个方法时也会回调该方法
+- invalidateOptionsMenu()--调用这个方法会去回调onPrepareOptionsMenu方法的
+
+[Toolbar动态改变menu \- FlowLeaf \- CSDN博客](http://blog.csdn.net/u011102153/article/details/53072105)
+
+[Android动态修改ToolBar的Menu菜单 \- CSDN博客](http://blog.csdn.net/q4878802/article/details/51160424)

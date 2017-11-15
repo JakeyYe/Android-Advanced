@@ -12,4 +12,13 @@ HashMap的默认初始长度为16，并且每次自动扩展或是手动初始�
 #### 当链表过长时，Java8引入红黑树来解决效率问题；
 
 
-#### 高并发时，链表可能会产生环形链路，大致是因为扩容时，transfer()函数引起的链表元素next节点形成环路，get时容易引起死锁，并发访问还是用ConcurrentHashMap;
+#### 高并发时，链表可能会产生环形链路，是因为扩容后ReHash时，transfer()函数引起的链表元素next节点形成环路（当两个线程都进行扩容时可能发生这种情况），get时容易引起死锁，并发访问还是用ConcurrentHashMap;
+
+#### 扩容，ReHash
+
+1)Capacity HashMap的当前长度，HashMap的长度是2的幂
+2）LoadFactor HashMap的负载因子，默认值是0.75f
+当HashMap.size > = Capacity*LoadFactor时就会Resize,这时就会扩展它的长度，扩展为原来数组容量的两倍；
+扩容的完整操作是：
+1）扩容：创建一个新的Entry空数组，长度为原数组的2倍；
+2）ReHash:遍历原数组，把所有的Entry重新Hash到新数组中取，因为容量扩大之后，Hash的规则也随之改变；
