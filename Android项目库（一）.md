@@ -1,7 +1,7 @@
 # 关于Android项目要了解的库（一）
 ---
 
-*放在这两个标准资源库的Jcenter和Maven Central的library，可以直接取这两个资源库的网站查找library的最新版本。[jCenter和Maven Central仓库](http://www.jianshu.com/p/3c63ae866e52)
+**放在这两个标准资源库的Jcenter和Maven Central的library，可以直接取这两个资源库的网站查找library的最新版本。[jCenter和Maven Central仓库](http://www.jianshu.com/p/3c63ae866e52)**
 
 	
 ### Agera

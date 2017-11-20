@@ -42,19 +42,19 @@
 ### PhotoView
 图片浏览缩放插件
 
-- 首先在工程的build.gradle上面添加JitPack仓库
-	
-	```allprojects {
+
+	//两步依赖添加
+	allprojects {
 		repositories {
       	...
       	maven { url "https://jitpack.io" }
 			}
-		}```
+	}
 
-- 其次，在模块的build.gradle上面添加依赖
-```dependencies {
-   compile 'com.github.chrisbanes:PhotoView:1.3.0'
-}```
+
+	dependencies {
+		compile 'com.github.chrisbanes:PhotoView:1.3.0'
+	}
 
 
 ###	富文本
