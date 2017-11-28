@@ -10,7 +10,7 @@
 - PopupWindow.mFocusable变量，作用是设置PopupWindow是否可以接受焦点事件，要设置为true后（通过PopupWindow.setFocusable(true)或PopupWindow的含有三个参数的构造函数，最后一个参数代表该属性），点击PopupWindow外部会消失，Back键也会消失，**该值默认为false**，若为false，这两个事件都不会起作用；
 
 
-- PopupWidow.setTouchable(true);作用时设置PopupWindow可接受触摸事件，设置这个，点击外部区域不会消失，而且点击Back键也不消失，该值默认为true，所以不用显示设置；
+- PopupWidow.setTouchable(true);作用时设置PopupWindow可接受触摸事件，设置这个，点击外部区域不会消失，而且点击Back键也不消失，该值默认为true，所以不用显式设置；
 
 
 - PopupWindow.setOutsideTouchable(true)；作用是设置可接受外部区域的触摸事件，默认为false，**设置为true后**，可接受外部区域点击事件，点击外部区域会消失，但是点击Back键还是不消失；

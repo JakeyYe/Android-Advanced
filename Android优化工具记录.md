@@ -11,4 +11,10 @@
 #### LeakCanary-Android和Java内存泄漏检测
 [LeakCanary 中文使用说明 \| Yet Another Summer Rain](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-### MAT(Memory Analyzer Tool)一款强大的内存泄漏分析工具
+#### MAT(Memory Analyzer Tool)一款强大的内存泄漏分析工具
+
+#### Android性能优化之使用Lint
+
+Lint是Android Studio 提供的代码扫描分析工具，它可以帮助我们发现代码结构/质量问题，同时提供一些解决方案，而且这个过程不需要我们手写测试用例；
+
+[Android性能优化之使用Lint \- 郭霖 \| 十条](http://www.10tiao.com/html/227/201702/2650238589/1.html)

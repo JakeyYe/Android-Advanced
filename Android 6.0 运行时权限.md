@@ -26,3 +26,10 @@
 ##[使用系统权限](https://developer.android.google.cn/training/permissions/index.html?hl=zh-cn)
 
 ## [权限的最佳做法](https://developer.android.google.cn/training/permissions/best-practices.html?hl=zh-cn)
+
+
+#### RxPermission的使用解析
+
+[tbruyelle/RxPermissions: Android runtime permissions powered by RxJava](https://github.com/tbruyelle/RxPermissions)
+
+[使用RxPermissions（基于RxJava2） \- 程序园](http://www.voidcn.com/article/p-yzmdneib-bbb.html)

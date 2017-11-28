@@ -1,4 +1,7 @@
 ## Android样式开发
+
+[Android Attr、Style和Theme详解 \- 简书](http://www.jianshu.com/p/d448ee26671d)
+
 Android的样式开发，不需要全部记住，但要总结清楚，要会用，需要用的时候，就直接翻看自己的总结，这样也能快速熟悉。
 
 	Android中的样式与网页设计中层叠样式表的原理类似-可以通过它将设计与内容分离。

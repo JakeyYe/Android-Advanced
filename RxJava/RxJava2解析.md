@@ -27,7 +27,7 @@ RxJava2是如何实现操作符的呢？
 
 ### 重要点
 
-- subscribeOn()是用来指定Observable运行所在的线程的，多次调用subscribe方法，只有第一次有效，其余的都会被忽略。
+- subscribeOn()是用来指定Observable运行所在的线程的，多次调用subscribeOn()方法，只有第一次有效，其余的都会被忽略。
 - observeOn()是用来指定Observer运行所在的线程的，多次调用，都会随着切换线程，还可以用来**切换Operator操作所在的线程**。
 - doOnNext()方法是在Observer.onNext()方法之前被调用的。
 - Func1和Action1的异同点：都是继承自Function接口，两个接口中都是只有一个call方法，不同点是Func1是有返回值的，而Action1是没有返回值的；Func系列和Action系列都是这样的特点。

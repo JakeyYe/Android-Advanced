@@ -30,3 +30,5 @@ ToolBar使用过程：
 [Toolbar动态改变menu \- FlowLeaf \- CSDN博客](http://blog.csdn.net/u011102153/article/details/53072105)
 
 [Android动态修改ToolBar的Menu菜单 \- CSDN博客](http://blog.csdn.net/q4878802/article/details/51160424)
+
+问题记录1 [Toolbar的Title与NavigationIcon距离异常 \- 简书](http://www.jianshu.com/p/27563ef79c0e)

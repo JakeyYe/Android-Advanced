@@ -24,6 +24,22 @@
                 getActivity(), DividerItemDecoration.HORIZONTAL_LIST));
 
 
+#### RecyclerView局部刷新
+
+- notifyItemChanged(int position) 更新列表position位置上的数据可以调用
+- notifyItemInserted(int position) 列表position位置添加一条数据时可以调用，伴有动画效果
+- notifyItemRemoved(int position) 列表position位置移除一条数据时调用，伴有动画效果
+- notifyItemMoved(int fromPosition, int toPosition) 列表fromPosition位置的数据移到toPosition位置时调用，伴有动画效果
+- notifyItemRangeChanged(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项进行数据刷新
+- notifyItemRangeInserted(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项批量添加数据时调用，伴有动画效果
+- notifyItemRangeRemoved(int positionStart, int itemCount) 列表从positionStart位置到itemCount数量的列表项批量删除数据时调用，伴有动画效果
+
+Adapter.notifyItemChanged(int position)方法是刷新单个Item整个布局,该方法会调用onBindViewHolder(ViewHolder,int)方法对item中的所有控件进行刷新；
+
+Adapter.notifyItemChanged(int position,Object payload)方法可以对单个Item中的某个控件进行刷新，该方法会调用onBindViewHolder(ViewHolder,int,List)方法对Item中单个控件进行刷新；
+
+[Android RecyclerView 真正的布局刷新的正确方式 \- qq402164452的博客 \- CSDN博客](http://blog.csdn.net/qq402164452/article/details/53464091)
+
 #### RecyclerView.notifyItemRemoved()相关方法动态改变单个Item的问题
 
 	通过该方法删除RecyclerView单个Item，但是传递的position不能直接使用onBindViewHolder()方法传递进来的position，而是应该使用ViewHolder.getAdapterPosition()当成Item下标位置；
@@ -43,7 +59,7 @@ card:cardUseCompatPadding 设置CardView上下之间的间隔，在RecyclerView�
 
 #### RecyclerView.ItemDecoration,该类是抽象类，自定义该类只需要覆写其中的方法，其中三个重要方法getItemOffsets(),onDraw(),onDrawOver()
 
-- getItemOffsets() 负责在Item上下左右隔出空间，作用相当于设置padding
+- getItemOffsets() 负责在Item上下左右隔出空间，为每一个Item设置一定的偏移量，作用相当于设置padding
 - onDraw() 负责在指定位置绘制一些用户指定的内容，在Item内容绘制之前绘制，所以可能被Item内容覆盖
 - onDrawOver() 负责在指定位置绘制一些用户指定的内容，在Item内容绘制之后，所以可能会覆盖Item内容
 
