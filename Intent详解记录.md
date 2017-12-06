@@ -50,12 +50,15 @@ CATEGORY_LAUNCHER:表示Intent的接受者应该在Launcher中作为顶级应用
 使用Android Intent进行原生分享，就是用到Intent.ACTION_SEND这个Action，这对不同的Type分享不同类型的数据；
 
 Type:
+
 - text/*:文本类型
 - image/*:图片类型
 - video/*：视频类型
 - audio/*：音频分享
 
 [调用android自带分享功能，分享图片文字等信息。 \- CSDN博客](http://blog.csdn.net/wanglining1987/article/details/52698535)
+
+[android调用系统播放器播放视频\-小坑一个 \- CSDN博客](http://blog.csdn.net/jw20082009jw/article/details/54583115)
 
 
 #### 使用Intent进行原生分享（可以做到）或者使用第三方SDK来进行分享

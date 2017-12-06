@@ -17,3 +17,5 @@ Glide V3和Glide V4的区别[Glide v4 : 快速高效的Android图片加载库](h
 注意点：
 
 1）Glide.with()方法传入的实例会决定Glide加载图片的生命周期，如果传入的是Activity或Fragment实例，那么当这个Activity或Fragment被销毁时，图片加载也会被停止，如果传入的是ApplicationContext，那么只有当应用被停止时，图片加载才会停止,所以最好传入Activity/Fragment实例。
+
+2)设置占位图后，加载出来的图片的大小可能会变化，所以可以将占位图当作ImageView的background；

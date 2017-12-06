@@ -1,3 +1,13 @@
+#### 重要文件记录
+
+[Android Gradle 使用总结 \- Android \- 掘金](https://juejin.im/entry/59ba28645188257e7f283fe0)
+
+- 用C/C++写的library会被叫做so包，也属于library，一般会放在于java同级的jniLibs文件夹中；
+
+- settings.gradle文件会在构建的initialization阶段被执行，它用于告诉构建系统那些模块需要包含到构建过程中去；
+
+- 项目的build.gradle文件用来配置针对所有模块的一些属性，它默认包含2个代码块，buildScript{}和allProjects{},前者用于配置构建脚本所用到的代码库和依赖关系，后者定义了所有模块需要用到的一些公共属性；
+ 
 	
 ## [Android打包那些事](http://www.jayfeng.com/2015/11/07/Android%E6%89%93%E5%8C%85%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/)
 
@@ -39,7 +49,7 @@
             keyPassword "xxxx"
         }
     }
-	//配置相关文件位置
+	//SourceSets定义源码目录
     sourceSets {
         main {
 			//将libs文件夹下的文件转移到jniLibs文件夹下，原来的libs文件夹是用来存放.so和.jar文件的
@@ -76,7 +86,12 @@
         }
     }
 
-	//设置Lint属性
+	//设置多渠道打包
+	productFlavors{
+
+	}
+
+	//设置Lint属性，忽略编译期的lint检查
     lintOptions {
         checkReleaseBuilds false
         abortOnError false

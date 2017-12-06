@@ -37,3 +37,15 @@
 使用LayoutInflater.inflate(int resourceId,ViewGroup root,boolean attachToRoot);方法即可
 
 或者使用下面的方式 [android 关于listview item设置高度的问题解决方法 \- CSDN博客](http://blog.csdn.net/coderinchina/article/details/50670505)
+
+### ListView实现单选效果
+[Android 7\.0 ListView ChoiceMode选择模式下绘制机理分析 及 C\.\.\. \- 简书](http://www.jianshu.com/p/53733b379750)
+
+单选效果有几种方式：
+1，使用ListView设置choiceMode选中模式刷新和ListView中的Item·实现Checkable接口的方式实现单选效果；
+
+[Android ListView 分分钟实现 Item 单选、多选效果 \- Android \- 掘金](https://juejin.im/entry/587484dd61ff4b005c538819)
+
+2，使用ListView,通过notifyDateSetChanged()方法;
+
+3，使用RecyclerView通过调用notifyItemChanged()实现；

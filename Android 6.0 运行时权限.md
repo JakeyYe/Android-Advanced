@@ -30,6 +30,11 @@
 
 #### RxPermission的使用解析
 
+	RxPermission rxPermission=new RxPermission();
+	rxPermission.request();
+
+	rxPermission.requestEach();//两个方法请求动态请求权限
+
 [tbruyelle/RxPermissions: Android runtime permissions powered by RxJava](https://github.com/tbruyelle/RxPermissions)
 
 [使用RxPermissions（基于RxJava2） \- 程序园](http://www.voidcn.com/article/p-yzmdneib-bbb.html)

@@ -22,3 +22,6 @@ HashMap的默认初始长度为16，并且每次自动扩展或是手动初始�
 扩容的完整操作是：
 1）扩容：创建一个新的Entry空数组，长度为原数组的2倍；
 2）ReHash:遍历原数组，把所有的Entry重新Hash到新数组中取，因为容量扩大之后，Hash的规则也随之改变；
+
+
+#### HashMap不是线程安全的，在并发操作插入元素的时候，有可能出现带环形链表，让下一次读操作出现死循环；使用Collections.synchronizedMap,Hashtable,CurrentHashMap这个三个同步HashMap,Collections.synchronizedMap和Hashtable,无论是读操作还是写操作，都会给整个集合加锁，导致会阻塞同一时间的其他操作；CurrentHashMap的优势是采用了“锁分段技术”，每一个Segment就好比一个自治区，读写操作高度自治，Segment之间互不影响；
