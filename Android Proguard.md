@@ -67,3 +67,7 @@
 [官方文档之用户指南](https://developer.android.com/studio/build/shrink-code.html "压缩代码和资源")
 
 [ProGuard使用手册英文版](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html)
+
+### 代码增加破解难度：混淆或加壳
+	1，加壳：将原apk中的dex文件取出，添加壳dex组成新apk,这一般直接使用第三方加壳技术就可以了，可以了解一下技术原理。
+	2,混淆：http://blog.csdn.net/guolin_blog/article/details/50451259，https://www.diycode.cc/topics/380 要实践才能记住

@@ -28,6 +28,18 @@
 ## [权限的最佳做法](https://developer.android.google.cn/training/permissions/best-practices.html?hl=zh-cn)
 
 
+#### Android 6.0以上运行时权限的原生做法：
+
+运行时权限三个步骤：
+
+1，检测需要的权限是否已经被授予（ContextCompat.checkSelfPermission()），若已授予则直接进行操作，技术；若未授予则进行第2步。
+
+2，申请权限(ActivityCompat.requestPermissions())，若是第一次申请权限，则直接申请，若是第二次申请（已被拒绝一次），则调用方法说明申请该权限的作用。
+
+3，检测申请权限的回调结果(Activity.onRequestPermissionsResult())，根据结果（同意/拒绝授予该权限）再做出不同操作，若同意，则进行操作，否则，不能进行需要该权限的操作。
+
+有不少情况是不需要授权的甚至权限都不需要，比如：你是到拨号界面而不是直接拨打电话，就不需要去申请权限；打开系统图库去选择照片；调用系统相机app去牌照等。
+
 #### RxPermission的使用解析
 
 	RxPermission rxPermission=new RxPermission();

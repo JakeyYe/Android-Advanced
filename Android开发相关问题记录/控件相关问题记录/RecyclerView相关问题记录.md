@@ -2,6 +2,8 @@
 
 没事可以多看看 [Android RecyclerView 使用完全解析 体验艺术般的控件 \- CSDN博客](http://blog.csdn.net/lmj623565791/article/details/45059587)
 
+[RecyclerView必知必会](http://www.10tiao.com/html/330/201701/2653578459/2.html)
+
 - LayoutManager 负责RecyclerView的布局，水平布局还是竖直布局或者是瀑布流；
 - ItemDecoration 负责Item之间的分隔线效果
 - ItemAnimator 负责操作单个Item的动画效果，Item增加、移除动画，要使之产生动画效果，只能使用notifyItemInserted()与notifyItemRemoved()方法，而不是使用notifyDateSetChanged()方法；
