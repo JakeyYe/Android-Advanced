@@ -19,24 +19,28 @@
 
 每个Fragment以及宿主Activity（继承自FragmentActivity）都会在创建时，初始化一个FragmentManager对象，它是处理好Fragment嵌套问题的关键，通过它来理清不同层次的栈视图；
 
-v4包 getSupportFragmentManager()；//获取FragmentManager对象
+getSupportFragmentManager()；//v4包 获取FragmentManager对象
+
 getFragmentManager();//获取FragmentManager对象
 
 FragmentTransaction transaction=FragmentManager().beginTransaction();//获取Transaction对象,开启一个事务
 
 //对Fragment的几种操作
-transaction.add()；
-transaction.remove();
-transaction.replace();
+
+- transaction.add()；
+- transaction.remove();
+- transaction.replace();
 
 //调用这两个方法来隐藏/展示Fragment,调用这两个方法不会调用生命周期方法，而是会调用onHiddenChanged()方法
-transaction.show()；
-transaction.hide();
 
-transaction.attach();
-transaction.detach();//会将view从UI移除，和remove()不同，此时Fragment的状态依然由FragmentManager维护；
+- transaction.show()；
+- transaction.hide();
+
+- transaction.attach();
+- transaction.detach();//会将view从UI移除，和remove()不同，此时Fragment的状态依然由FragmentManager维护；
 
 //Transaction.commit()方法要在Activity.onSaveInstanceState()方法之前调用，否则会报错，不能在onSaveInstanceState()方法之后做commit操作； 
+
 transaction.commit()//提交事务，使用Transaction做一些操作后，都要调用该方法来提交事务，来保证操作生效
 
 [Fragment全解析系列（二）：正确的使用姿势 \- 简书](http://www.jianshu.com/p/fd71d65f0ec6)

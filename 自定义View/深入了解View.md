@@ -20,10 +20,16 @@
  	public  CustomView(Context context, AttributeSet attrs, int defStyleAttr) {}
  	public  CustomView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {}
 
-	要点：一定要覆写带AttributeSet属性参数的构造方法，才能在XML资源文件中设置自定义View
-	如果只覆写带Context属性参数的构造方法则只能在代码中声明该自定义View组件，带四个参数的构造方法是
-	在API21才加上的，暂不考虑。有三个参数的构造函数中第三个参数是默认的Style，这里的默认的Style是指
-	它在当前Application或Activity所用的Theme中的默认Style，且只有在明确调用的时候才会生效。
+	要点：
+	1，一定要覆写带AttributeSet属性参数的构造方法，才能在XML资源文件中设置自定义View，这个参数会将XML里设定的属性传递给构造函数；
+	2，如果只覆写带Context属性参数的构造方法则只能在代码中声明该自定义View组件，带四个参数的构造方法是
+	  在API21才加上的，暂不考虑。
+	3，有三个参数的构造函数中第三个参数是默认的Style，这里的默认的Style是指它在当前Application或Activity所用的Theme中的
+	  默认Style，且只有在明确调用的时候才会生效，如果为0将不会应用任何默认的style。
+
+	获取属性值：
+	TypedArray a=Context.obtainStyledAttributes();
+	a.recycle();//TypedArray是一个共享的资源，使用完毕必须回收它
 
 ### 3,getMeasuredWidth()和getWidth();
 

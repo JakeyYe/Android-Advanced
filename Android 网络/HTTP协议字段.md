@@ -10,7 +10,7 @@
 - Pragma:no-cache（Pragma代表注释，附注，Pragma头域用来包含实现特定的指令，这个的含义和Cache-Control:no-cache相同）
 - user-Agent(浏览器身份标识字符串)
 - Last-Modified(资源最近修改时间)
-- IF-Modified-Since(用于提供条件GET，只有当所请求的内容在指定的日期之后又经过修改才返回它，否则返回304 “Not Modified（未修改，缓存有效）”)
+- If-Modified-Since(用于提供条件GET，只有当所请求的内容在指定的日期之后又经过修改才返回它，否则返回304 “Not Modified（未修改，缓存有效）”)
 - If-Unmodified-Since(仅当该实体自某个特定时间以来未被修改过的情况下，才发送回应)
 - Range(该字段代表可以请求实体的一个或多个范围)
 - If-Match(仅当客户端提供的实体与服务器上对应的实体相匹配时，才进行对应的操作)
@@ -26,10 +26,12 @@
 	`If-None-Match:"686897696a7c876b7e"`
 
 	如果服务端发现ETag值匹配，就会发送一个极短的响应，包含HTTP "304(未修改)"的状态，若不匹配，会发送一个完整的响应。
+- Last-Modified和If-Modified-Since的典型使用：
+
 
 ###2，响应字段
 - Accept-Ranges:bytes(代表服务区数据是否可以断点续传，分段传输，数据单位是bytes,这是唯一的)
-- Cache-Control:max-age=0(这代表客户端不不能缓存,适用于动态资源)
+- Cache-Control:max-age=0(这代表客户端不能缓存,适用于动态资源)
 - ETag:"737060cd8c284d8af7ad3082f209582d"(对于某个资源的某个版本的一个标识符，通常是一个消息散列)
 - Expires(指定一个日期/时间，超过该时间则认为此回应过期，适用于静态资源)
 - Last-Modified(所请求的对象的最后修改日期)
