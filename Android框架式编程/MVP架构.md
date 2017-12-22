@@ -20,3 +20,5 @@ Model
 ![Android框架式编程之MVP](http://images2015.cnblogs.com/blog/682616/201703/682616-20170316100617713-1230796637.png)
 
 [Android框架式编程之MVP架构 \- 灰色飘零 \- 博客园](http://www.cnblogs.com/renhui/p/6557230.html)
+
+[Android MVP Plugin，一键完成MVP结构代码编写](https://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822311&idx=1&sn=ed8aa908ec4a5cb6b009bb87cdf89d07&chksm=80b78239b7c00b2f0f02d645ce0c7cdcb7fcb0080348f30b5d3d28ece1c415ed60fb47b6c3dd&scene=21#wechat_redirect)

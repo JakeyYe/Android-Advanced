@@ -14,3 +14,12 @@
  View控件使用style是不需要加前缀的,不需要加命名空间前缀，<TextView id="@+id/tv" style="@style/tvStyle"/>
 
  而theme的使用是要加命名空间的，如 android：theme="@style/AppTheme"/>
+
+
+#### 主题Theme，主要的主题属性：
+
+android：windowBackground,这是Window的background；
+
+android：windowNoTitle,去掉Window的Toolbar布局？？？
+
+android：windowIsTranslucent，设置Window是否时半透明窗口；

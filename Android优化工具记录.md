@@ -1,5 +1,8 @@
 ## Android优化工具记录
 
+#### DDMS
+Dalvik Debug Monitor Service,是Android开发环境中的Dalvik虚拟机调试监控服务；
+
 #### HierarchyView 布局层次查看器，查看布局情况，以便进行布局优化
 	开启工具：从Android Studio中打开
 		Tools->Android->Android Device Monitor
