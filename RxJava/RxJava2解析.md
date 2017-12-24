@@ -1,5 +1,7 @@
 ## RxJava2
 
+[RxJava2 学习资料推荐](https://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650823932&idx=1&sn=198b18f2f9359e2eee1ffc8703d31905&chksm=80b78862b7c001741916c681d070ca3c1a58eef5632ea394797029d0335f312816afecf87e7d&mpshare=1&scene=1&srcid=0920pW30MFTgeQRTXaU1XVHo&pass_ticket=uMLfEXNPeBmNUcqpUjh7OOK0zDtImVzpV57XXtqVcvfn4qBdjiTIHoKa9HgQdfs%2F#rd)
+
 	RxJava1和RxJava2的核心思想是没有变化的，只不过RxJava2更新了一些新东西。
 
 在RxJava中，内置了几个线程选项：
@@ -7,6 +9,9 @@
 - Schedulers.io()代表io操作的线程，通常用于网络，读写文件等io密集型的操作；
 - Schedules.computation()代表CPU计算密集型的操作，例如需要大量计算的操作；
 - Schedules.newThread()代表一个常规的新线程；
+
+RxAndroid 提供的线程选项
+
 - AndroidSchedulers.mainThread()代表Android的主线程。
 
 在RxJava内部使用的是线程池来维护这些线程，所以效率也挺高的。
