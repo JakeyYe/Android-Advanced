@@ -12,6 +12,12 @@ Java反射机制是指在运行状态中，对于任意一个类，都能知道�
 	Constructor<?> constructors=Class.forName("className").getConstructors();//获取构造方法数组中的构造方法顺序是与类中构造方法顺序刚好相反的，构造方法顺序第一个是0
 	Car car3=(Car)constructors[0].newInstance("BMW",1);
 
+Class.forName()和newInstance() 实际上是把**new**这个创建实例的方式分解为两步，即首先调用Class加载方法加载某个Class类对象，然后再调用newInstance()方法实例化；
+
+Class下的newInstance()和 new 的区别？
+
+首先newInstance是一个方法，而new是一个关键字，其次，newInstance方法的使用是有局限的，因为它生成对象只能调用无参的构造方法，而new关键字生成对象对这个没有限制；
+
 
 ###反射机制使用场景：
 	1，工厂方法模式：Factory类中用反射的话，添加一个新的类，就不需要修改工厂类Factory了。

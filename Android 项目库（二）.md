@@ -1,7 +1,7 @@
 ## 关于Android项目要了解的库（二）
 
 [多个开源库的介绍](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0813/3296.html)
-### greenDao
+### greenDao（单独文件记录）
 加上下面那两个，这三个都是关于数据库的库。
 ### greenDao 3.0 原理解析：
 	greenDao是Android的ORM框架，ORM就是对象关系映射（Object Relation Mapping）。它的实现思想就是将关系数据库中表的数据
@@ -73,7 +73,7 @@
 
 ### Android日志记录—Logger,Timber,logback
 - Logger
-	依赖 compile 'com.orhanobut:logger:1.15'支持更高级的Log,不过Log都是打印在控制台里，适合用于开发调试。
+	依赖 compile 'com.orhanobut:logger:2.1.1'支持更高级的Log,不过Log都是打印在控制台里，适合用于开发调试。
 
     Logger的使用：
 

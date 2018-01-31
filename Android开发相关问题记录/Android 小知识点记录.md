@@ -40,7 +40,6 @@ ARGB值
         }
     }
 
-
 #### URL和URI
 	URL 统一资源定位符
 	URI 统一资源标识符
@@ -58,3 +57,23 @@ ARGB值
 [使用gradle进行打包，添加混淆配置将log输出删去](http://www.jianshu.com/p/4b61391a665f)
 
 	ProGuard的作用：ProGuard读取输入的代码，进行压缩，优化，混淆三个操作（可以任意开启或关闭其中的任一个操作）
+
+
+#### assets 文件的使用，assets文件夹中的文件在打包成apk时会原样打包进apk中，并且不会生成引用ID；
+AssetManager manager=Context.getAssets();//获取AssetManager来调用assets文件夹中的文件；
+
+问题：assets、res和raw单个文件夹路径的区别？
+
+
+#### 子类的构造方法如果要引用super的话，必须把super放在函数的首位，注意是构造方法；
+
+Activity的onCreate()、onStart()、onResume()方法要确保先执行父类的方法后，再执行自己要执行的操作逻辑；
+
+如果子类和父类适当地隔离（子类资源依赖性方面），super.X()方法调用就不需要遵守任何执行顺序规范；
+
+#### getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);getWindow.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+这两个方法可以在Activity中动态改变全屏与否；
+
+	FLAG_FULLSCREEN
+	Window flag: hide all screen decorations (such as the status bar) while this window is displayed;

@@ -61,9 +61,16 @@ Type:
 [android调用系统播放器播放视频\-小坑一个 \- CSDN博客](http://blog.csdn.net/jw20082009jw/article/details/54583115)
 
 
-
 [android调用系统分享实现朋友圈同时分享文字和图片（可多张） \- 简书](http://www.jianshu.com/p/d1852ace3fd5)
 
+
+	Intent intent=new Intent(Intent.ACTION_SEND);
+	//使用Uri.fromFile()就可以不用添加 "file://"了
+	intent.setType("image/*");//这里可以替换不同的文件类型Type
+	intent.puutExtra(Intent.EXTRA_STREAM,Uri.fromFile(new File(imgPath)));//imgPath是图片文件的本地地址路径
+	Activity.startActivity(intent);
+
+[Android Intent分享文件\|分享图片\|分享文字\|功能的实现 \- Cat的专栏 \- CSDN博客](http://blog.csdn.net/DucklikeJAVA/article/details/48580797)
 
 #### 使用Intent进行原生分享（可以做到）或者使用第三方SDK来进行分享
 [史上最详细Android集成QQ，微信，微博分享（不用第三方）持续更新中 \- Android干货 \- SegmentFault](https://segmentfault.com/a/1190000004926845)

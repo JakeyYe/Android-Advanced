@@ -31,3 +31,15 @@ JNIEnv *env,jObject obj
 [在 Android Studio 2\.2 中愉快地使用 C/C\+\+ \| 湫水](http://wl9739.github.io/2016/09/21/%E5%9C%A8-Android-Studio-2-2-%E4%B8%AD%E6%84%89%E5%BF%AB%E5%9C%B0%E4%BD%BF%E7%94%A8-C-C-md/)
 
 [Android Studio 2\.3下NDK开发流程 \- 郭霖 \| 十条](http://www.10tiao.com/html/227/201704/2650239332/1.html)
+
+
+### 谈谈 ABI 和 so
+
+CPU架构 -> ABI -> .so
+
+Android 支持多种 CPU 架构，每一种 CPU 架构，都定义了一种 ABI （Application Binary Interface，应用二进制接口），ABI 定义了其所对应的 CPU 架构能够执行的二进制文件（如 .so 文件） 的格式规范，决定了二进制文件如何与系统进行交互；
+
+so (shared object,共享库)是机器可以直接运行的二进制代码，是Android 上的动态链接库，类似于 Windows 上的dll,每一个 Android 应用所支持的ABI是其 APK 提供的 .so 文件决定的；
+
+[谈谈Android的so \| Allen's Zone](http://allenfeng.com/2016/11/06/what-you-should-know-about-android-abi-and-so/)
+

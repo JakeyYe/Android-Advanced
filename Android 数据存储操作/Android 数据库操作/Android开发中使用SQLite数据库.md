@@ -1,8 +1,16 @@
 ## Android 开发中使用SQLite数据库
 
-- SQLiteOpenHelper
+Android SQLite 使用的基本操作：
 
-- SQLiteDatabase=SQLiteOpenHelper.getReadableDataBase();
+1. Bean类，对应数据库中的表结构；
+2. 覆写SQLiteOpenHelper类，创建数据库和表；
+3. Dao类，对对应的数据库表进行增删改查操作；
+
+
+----
+	
+	SQLiteOpenHelper
+	SQLiteDatabase=SQLiteOpenHelper.getReadableDataBase();
 
 参考 [Android开发中使用SQLite数据库](https://www.ibm.com/developerworks/cn/opensource/os-cn-sqlite/)
 
@@ -14,6 +22,15 @@
 [Android版本更新时对SQLite数据库升级或者降级遇到的问题 \- 态度决定高度A=X\+Y\+Z \- CSDN博客](http://blog.csdn.net/qq_32059827/article/details/51611482)
 
 ![944365\-473cb21a518cade1\.png \(606×476\)](http://upload-images.jianshu.io/upload_images/944365-473cb21a518cade1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+升级数据的几种情况：
+
+1. 增加表
+2. 删除表
+3. 修改表（增加表字段，删除表字段，修改表字段等操作）
+
+[绝对值得一看的 Android 数据库升级攻略 \- Android \- 掘金](https://juejin.im/entry/586b5ecc61ff4b006d7eef05)
 
 ### MySql
 
@@ -57,5 +74,7 @@
 	update news_table set name='JakeyYe' where name='jakey';
 
 	delect from news_table where name='JakeyYe';
+
+	drop table if exists table_name;//删除数据库中的指定表
 
 [mysql基本操作命令汇总\-\-笔记 \- 简书](http://www.jianshu.com/p/118e1c41e9f0)

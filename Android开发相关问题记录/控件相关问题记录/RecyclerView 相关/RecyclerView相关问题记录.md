@@ -2,12 +2,26 @@
 
 没事可以多看看 [Android RecyclerView 使用完全解析 体验艺术般的控件 \- CSDN博客](http://blog.csdn.net/lmj623565791/article/details/45059587)
 
+[深入浅出 RecyclerView\|开源实验室\-张涛](https://www.kymjs.com/code/2016/07/10/01/)
+
 [RecyclerView必知必会](http://www.10tiao.com/html/330/201701/2653578459/2.html)
 
+#### RecyclerView 中重要的组成部分：
+
 - LayoutManager 负责RecyclerView的布局，水平布局还是竖直布局或者是瀑布流；
+
 - ItemDecoration 负责Item之间的分隔线效果
+
 - ItemAnimator 负责操作单个Item的动画效果，Item增加、移除动画，要使之产生动画效果，只能使用notifyItemInserted()与notifyItemRemoved()方法，而不是使用notifyDateSetChanged()方法；
+
 - RecyclerView.Adapter 负责将数据显示在界面上
+
+LayoutManager 的常用方法：
+
+	findFirstVisibleItemPosition()//返回当前第一个可见的Item的position
+	findFirstCompletelyVisibleItemPosition()//返回当前第一个完全可见的Item的position
+	findLastVisibleItemPosition()
+	findLastCompletelyVisibleItemPosition()
 
 #### RecyclerView源码分析，RecyclerView的三个方法onCreateViewHolder/onBindViewHolder/getViewType三个方法的调用顺序和频率？
 

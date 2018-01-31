@@ -9,6 +9,7 @@ ToolBar使用过程：
 	mActionBar=getSupportActionBar();//获取ActionBar
 	//getSupportActionBar()方法继承自android.support.v7.app.AppCompatActivity
 
+	//这些是 ActionBar的API，不是Toolbar的
 	mActionBar.setDisplayHomeAsUpEnable(true);//增加一个返回箭头，id为android.R.id.home
 
 	mActionBar.setDisplayShowHomeEnable(true);//设置应用程序图标为返回操作按钮
@@ -20,6 +21,9 @@ ToolBar使用过程：
 [ToolBar、ActionBar与Menu的纠葛（以及navigationIcon、setHomeButtonEnabled、setDisplayHomeAsUpEnabled） \- 赛艇队长 \- 博客园](http://www.cnblogs.com/bellkosmos/p/5382272.html)
 
 #### Toolbar上动态设置Menu
+
+**Toolbar.inflateMenu() 在Toolbar上加载Menu**
+
 几个重要方法：
 
 - onOptinsItemSelected()--处理Menu中Item点击事件的
@@ -32,3 +36,5 @@ ToolBar使用过程：
 [Android动态修改ToolBar的Menu菜单 \- CSDN博客](http://blog.csdn.net/q4878802/article/details/51160424)
 
 问题记录1 [Toolbar的Title与NavigationIcon距离异常 \- 简书](http://www.jianshu.com/p/27563ef79c0e)
+
+问题记录2 [ToolBar的setTitle\(\)方法不生效解决方法 \- CSDN博客](http://blog.csdn.net/wshngyf/article/details/51761609)
