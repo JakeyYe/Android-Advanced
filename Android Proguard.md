@@ -1,8 +1,10 @@
 ## Android Proguard（混淆）
 
 	ProGuard is a Java class file shrinker, optimizer, obfuscator, and preverifier. 
-	ProGuard是一个Java类文件压缩，优化，混淆和预校验器。它可以检测并删除未使用的类，字段，方法和属性。它可以优化字节码，并删除未使用的指令。它可以将类的，字段和方法使用短无意义的名称
-	进行重命名。
+	ProGuard是一个对Java类文件压缩，优化，混淆和预校验器的工具。它可以检测并删除未使用的类，字段，方法和属性。它可以优化字节码，并删除未使用的指令。它可以将类的，字段和方法使用短无意义的名称进行重命名。
+
+[ProGuard混淆的世界](http://ntop001.github.io/2014/04/10/something-about-proguard/)
+
 给Android项目进行Proguard混淆打包，可以使apk体积减小点，apk瘦身，还可以混淆项目代码，增加反编译难度。启用通过ProGuard实现代码压缩。
 
 	buildTypes {
@@ -22,7 +24,7 @@
 
 ### ProGuard（混淆）
 	ProGuard是包含代码压缩，优化，混淆等一系列行为的过程,混淆过程会有如下几个功能：
-	1,压缩：移除无效的类，类成员，方法等（-dontshrink命令禁用压缩）；
+	1，压缩：移除无效的类，类成员，方法等（-dontshrink命令禁用压缩）；
 	2，优化：分析和优化方法的二进制代码，根据proguard-android-optimize.txt的描述，优化可能会造成已写潜在风险，不能保证在所有版本的Dalvik上都正常运行，proguard-android.txt是默认将优化关闭了的；
 	3，混淆：把类名，类成员名，方法名替换为简短且无意义的名称（-dontobfuscate命令禁用混淆）；
 	4，预校验：添加预校验信息，这个预校验是作用在Java平台上的，Android平台上不需要这项功能，去掉之后还可以加快混淆速度。
@@ -59,8 +61,6 @@
 	**
 	***
 	...
-[ProGuard混淆的世界](http://ntop001.github.io/2014/04/10/something-about-proguard/)
-
 
 [Android安全攻防战，反编译与混淆技术完全解析（下） \- 郭霖的专栏 \- CSDN博客](http://blog.csdn.net/guolin_blog/article/details/50451259)
 
@@ -69,5 +69,11 @@
 [ProGuard使用手册英文版](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html)
 
 ### 代码增加破解难度：混淆或加壳
-	1，加壳：将原apk中的dex文件取出，添加壳dex组成新apk,这一般直接使用第三方加壳技术就可以了，可以了解一下技术原理。
+	1,加壳：将原apk中的dex文件取出，添加壳dex组成新apk,这一般直接使用第三方加壳技术就可以了，可以了解一下技术原理。
 	2,混淆：http://blog.csdn.net/guolin_blog/article/details/50451259，https://www.diycode.cc/topics/380 要实践才能记住
+
+### 注意点
+
+`resource shrinking` 目前还不支持移除定义在`res/values`目录下的资源文件（`string/dimension/styles/colors`）,只支持移除未使用的`res`目录下的其他资源文件；
+
+可以使用`Lint`对`res`下面未使用的资源进行筛选，然后删除，减小`apk`大小，这些资源包括`res`文件夹下的所有内容，比如图片，字符串，尺寸等等；

@@ -86,3 +86,22 @@ card:cardUseCompatPadding 设置CardView上下之间的间隔，在RecyclerView�
 
 #### RecyclerView.ItemAnimator 定义RecyclerView单个Item的动画效果
 [RecyclerView系列之六：item动画效果 \- 简书](http://www.jianshu.com/p/b375d552db63)
+
+#### ListView/ScrollView/RecyclerView中添加滚动条
+
+	//设置该属性，当内容超出范围时，让滚动条一直显示
+	android:fadeScrollbars="false" 
+
+	android:scrollbars="vertical/horizontal"
+	android:scrollbarTrackXXX=""//长条背景
+	android:scrollbarThmbXXX=""//短条
+	android:scrollbarStyle=""//定义滚动条样式和位置
+	android:scrollbarSize="4dp"//滚动条宽度
+
+[Android必知必会\-自定义Scrollbar样式 \| Cafeting](http://likfe.com/2016/05/16/diyScrollbar/)
+
+#### 为RecyclerView优雅地添加Header/Footer
+
+通过装饰器模式，去设计一个适配器类，增强原有Adapter的功能，使其支持`addHeaderView`和`addFooterView`；
+
+[Android 优雅的为RecyclerView添加HeaderView和FooterView \- Hongyang \- CSDN博客](http://blog.csdn.net/lmj623565791/article/details/51854533)

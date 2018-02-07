@@ -15,5 +15,11 @@
 
 	adb shell screencap /sdcard/screen.png :截图操作
 
+	//查看手机危险权限组
+	adb shell pm list permission -d -g
+
+	//查看栈顶的Activity
+	adb shell dumpsys activity | grep "mFocusedActivity"
+
 
 深入了解参考 [官方文档](https://developer.android.com/studio/command-line/adb.html#IntentSpec,)

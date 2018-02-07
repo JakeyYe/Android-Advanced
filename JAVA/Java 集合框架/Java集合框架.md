@@ -20,10 +20,6 @@
   TreeSet：基于TreeMap的NavigableSet实现的，会对元素进行排序，是基于TreeMap实现的。
 
 
-
-
-
-
 ##Map接口：键值对存储的数据结构
 
   Hashtable:实现了一个key-value映射的哈希表，不允许null，同步的

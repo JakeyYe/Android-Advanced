@@ -9,7 +9,7 @@ SQLite 是一个关系型数据库，Java 用的是对象，对象和关系之�
 greenDao 3.0 会通过一个插件来生成代码，这个插件会去浏览所有被@Entity注解的类去收集表信息，并生成三个类，DaoSession,DaoMaster,和所有的Dao类。
 
 ### greenDao 3.0 的使用教程：
-	1，在应用的build.gradle文件中添加下面的内容：
+	1，在项目根目录下的build.gradle文件中添加下面的内容：
 		classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
 
 	2，在Module的build.gradle文件中，添加下面的内容：
