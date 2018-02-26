@@ -15,10 +15,10 @@
 
 [Android之自定义EditText光标和下划线颜色 \- 个人文章 \- SegmentFault 思否](https://segmentfault.com/a/1190000009507919)
 
-#### EditView 设置行距后不影响光标的高度
+#### EditText 设置行距后不影响光标的高度
 
 [android edittext 设置行距不影响光标高度 \- 简书](https://www.jianshu.com/p/7a75ee1cbff2)
 
 
-#### EditView 设置光标位置的方法
-EditView.setSelection(int);设置光标位置的方法
+#### EditText 设置光标位置的方法
+EditText.setSelection(int);设置光标位置的方法

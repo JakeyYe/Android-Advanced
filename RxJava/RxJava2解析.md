@@ -38,7 +38,7 @@ Flowable的功能与Observable大致相同，但有一个主要区别：Observer
 ### 重要点
 
 - subscribeOn()是用来指定Observable运行所在的线程的，**多次调用subscribeOn()方法，只有第一次有效，只会使用最接近源Observable的那个，其余的都会被忽略**。
-- observeOn()是用来指定Observer运行所在的线程的，多次调用，都会随着切换线程，还可以用来**切换Operator操作所在的线程**。
+- observeOn()是用来指定Observer运行所在的线程的，多次调用，都会随着切换线程，**所以是最接近 Observer 的那个才会有效**。
 - doOnNext()方法是在Observer.onNext()方法之前被调用的。
 - Func1和Action1的异同点：都是继承自Function接口，两个接口中都是只有一个call方法，不同点是Func1是有返回值的，而Action1是没有返回值的；Func系列和Action系列都是这样的特点。
 - 当Android系统尝试销毁包含正在运行的Observable的Activity时会发生内存泄漏，所在在Activity/Fragment销毁前，要停止内部的Observable的运行，停止不是取消订阅，因为即时取消订阅Observable还是继续发送事件，只不过Observer接收不到而已，还是会持有引用，而是要终止序列，RxLifecycle库是通过发出onComplete()或onError()方法终止Observable序列的；

@@ -1,0 +1,3 @@
+## RxAndroid 2解析
+
+RxAndroid就是对Android的Handler、Looper和Message的封装，使其替换为基于观察者模式的调用；RxJava就是使用RxAndroid来进行主线程和子线程的切换；
