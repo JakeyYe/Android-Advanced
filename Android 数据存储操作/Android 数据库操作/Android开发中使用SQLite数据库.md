@@ -1,11 +1,14 @@
 ## Android 开发中使用SQLite数据库
 
+[Android ：SQLlite数据库 使用手册 \- 简书](https://www.jianshu.com/p/8e3f294e2828)
+
 Android SQLite 使用的基本操作：
 
 1. Bean类，对应数据库中的表结构；
 2. 覆写SQLiteOpenHelper类，创建数据库和表；
 3. Dao类，对对应的数据库表进行增删改查操作；
 
+[android sqlite数据库 查询 \- 简书](https://www.jianshu.com/p/4f67e8c3463b)
 
 ----
 	
@@ -14,15 +17,9 @@ Android SQLite 使用的基本操作：
 
 参考 [Android开发中使用SQLite数据库](https://www.ibm.com/developerworks/cn/opensource/os-cn-sqlite/)
 
-### 数据库升级时，可能会遇到的一些情况：
-- 需要扩展一个表的字段
-- 删除原来表上的某个冗余字段
-- 新建一个表
-
-[Android版本更新时对SQLite数据库升级或者降级遇到的问题 \- 态度决定高度A=X\+Y\+Z \- CSDN博客](http://blog.csdn.net/qq_32059827/article/details/51611482)
-
 ![944365\-473cb21a518cade1\.png \(606×476\)](http://upload-images.jianshu.io/upload_images/944365-473cb21a518cade1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### 数据库升级：
 
 升级数据的几种情况：
 

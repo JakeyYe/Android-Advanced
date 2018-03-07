@@ -9,6 +9,8 @@ RxJava 函数响应式编程[Rxjava2入门教程一：函数响应式编程及�
 	clear()和dispose()方法的作用都是dispose在CompositeDisposable集合中的所有Disposable对象，但是调用dispose()方法后会使CompositeDisposable.add()方法不能再添
 	加Disposable对象，该方法会返回false；
 
+	使用CompositeDisposable是可以防止内存泄漏
+
 2，Observable和Flowable
 
 ![v2\-b6a6da8d2b90129984268ff5db4e9ebb\_hd\.jpg \(720×882\)](https://pic3.zhimg.com/80/v2-b6a6da8d2b90129984268ff5db4e9ebb_hd.jpg)
