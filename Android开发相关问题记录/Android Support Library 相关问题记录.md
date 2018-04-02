@@ -130,6 +130,8 @@ v13 支持库使用范围是 Android 3.2（API 13）及其以上版本；这个�
 	com.android.support:support-v13:25.3.1
 
 
+[Difference between v4 and v13 support library in Android?](https://stackoverflow.com/questions/27213692/difference-between-v4-and-v13-suport-library-in-android)
+
 ### 关于Support Library考虑一个问题：如果我只是兼容4.4版本以上的Android系统，我还需要引用 Support Library吗？如果引用这么多 Support Library，不开启Proguard是否会全部打包进apk中？如果开启了Proguard,没有使用的Support Library中的代码是否会被打包进apk中？
 
 	第一个问题：

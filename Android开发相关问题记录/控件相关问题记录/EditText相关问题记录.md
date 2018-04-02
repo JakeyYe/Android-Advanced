@@ -22,3 +22,7 @@
 
 #### EditText 设置光标位置的方法
 EditText.setSelection(int);设置光标位置的方法
+
+EidtText 设置输入的内容长度限制，多余的内容会无法输入
+android:maxLength="10"//设置该属性，限制输入内容的长度
+

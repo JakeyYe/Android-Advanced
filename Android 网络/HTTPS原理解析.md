@@ -12,6 +12,8 @@
 ### HTTTPS的关键技术
 	HTTPS协议的主要功能基本都依赖于TLS/SSL协议，提供了身份验证，信息加密和完整性校验的功能，可以解决 HTTP 存在的安全问
 	题。
+	
+	SSL协议，是一种安全传输协议，TLS是SSL v3.0的升级版；
 
 
 ### HTTPS = HTTP + TLS/SSL

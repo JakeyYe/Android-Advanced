@@ -11,8 +11,7 @@
 使用运行时权限开源库 AndPermission
 [用法 · GitBook](http://www.yanzhenjie.com/AndPermission/cn/usage.html)
 
-1. 第一次申请权限被拒绝后，再次申请前弹框告诉用户使用该权限的原因，防止用户直接拒绝权限并且选中“不再提示”按钮；
+1. 在第一次申请权限前，可以**弹框**提示用户为什么需要这个权限，用户同意后再去真正申请权限，被拒绝后，直接提示用户没有权限，无法进行下一步操作；若真正申请权限被拒绝后，再次申请前**弹框**告诉用户使用该权限的原因，防止用户直接拒绝权限并且选中“不再提示”按钮；
 2. 当用户选中“不再提示”按钮时，再次申请权限，就弹出一个弹框，并给一个跳转到应用权限设置界面选项，方便用户重新赋予应用权限；
-
 
 [目前最流行的运行时权限请求框架PermissionsDispatcher、RxPermissions和easypermissions的使用和对比 \- Android开发社区 \| CTOLib码库](https://www.ctolib.com/topics-119432.html)

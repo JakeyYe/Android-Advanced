@@ -6,8 +6,13 @@
 
 [RecyclerView必知必会](http://www.10tiao.com/html/330/201701/2653578459/2.html)
 
-#### RecyclerView 中重要的组成部分：
+#### 注意点记录：
+1，public void onBindViewHolder(ViewHolder,int,List<Object> payloads)三个参数的方法不要调用父类的方法 super.onBindViewHolder(),因为父类的这个方法调用的是两个参数的onBindViewHolder方法；
 
+第三个参数是List对象，所以这个参数的判空，不能直接用payloads==null来判断这个参数为不为null，而应该使用List.isEmpty()这个方法，通过payloads.get(0)获取第一个数据；
+
+
+#### RecyclerView 中重要的组成部分：
 - LayoutManager 负责RecyclerView的布局，水平布局还是竖直布局或者是瀑布流；
 
 - ItemDecoration 负责Item之间的分隔线效果

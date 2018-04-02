@@ -14,7 +14,7 @@
 ### 刷新方法
 	invalidate():引起View树的重绘，要在UI线程中调用
 	postInvalidate()：和上面的方法一致，只不过要在非UI线程中调用
-	requestLayout():引起View的三个流程的重新执行（measure-layout-draw）
+	requestLayout():引起View的三个流程的重新执行（measure-layout-draw）（View.requestLayout()方法最后会调用ViewRootImpl.requestLayout()方法，所有该方法会触发View的三大操作）
 
 ![invalidate和requestLayout的区别](http://upload-images.jianshu.io/upload_images/1734948-b4493f7b0234dd69.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 "invalidate和requestLayout的区别")
 
@@ -30,4 +30,4 @@ Android 默认引入了 "android"这个命名空间，表示是去系统资源�
 
 xmlns:app="http://schemas.android.com/res-auto" 这个命名空间，表示自动去相关文件中查找定义的属性；
 
-[Android自定义View（二、深入解析自定义属性） \- openXu的专栏 \- CSDN博客](http://blog.csdn.net/xmxkf/article/details/51468648)
+[Android自定义View（二、深入解析自定义属性） \- openXu的专栏 \- CSDN博客](http://blog.csdn.net/xmxkf/article/details/51468648)	

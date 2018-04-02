@@ -5,6 +5,11 @@
 	PopupWindow和AlertDialog两者的最主要的区别就是显示位置问题：
 	位置是否固定，AlertDialog显示位置相对是固定的，直接显示在Window的中间位置，而PopupWindwo则可以在Window的任意位置显示；
 
+可以借鉴[Android PopupWindow的封装使用](https://www.cnblogs.com/jzyhywxz/p/7039503.html)
+
+- PopupWindow的背景边框阴影效果是通过设置一个有阴影边框的背景Drawable来实现的；
+- PopupWindow.showAsDropDown()方法中的偏移量无效的解决方法，直接调用showAsDropDown(View)方法：在不会超出屏幕的情况下PopupWindow的左上角位置会在anchor的左下角或者左上角显示，若可能超出屏幕，将向左偏移；第二个参数如果直接设置为`-contentView.getMeasureWidth()`的话，那么contentView的左上角会在anchor的左上角或左下角位置，如果再加上一个正值，那么PopupWindow的位置就会向右移动，但是不会超出屏幕；
+
 #### 重要点记录
 
 - PopupWindow.mFocusable变量，作用是设置PopupWindow是否可以接受焦点事件，要设置为true后（通过PopupWindow.setFocusable(true)或PopupWindow的含有三个参数的构造函数，最后一个参数代表该属性），点击PopupWindow外部会消失，Back键也会消失，**该值默认为false**，若为false，这两个事件都不会起作用；

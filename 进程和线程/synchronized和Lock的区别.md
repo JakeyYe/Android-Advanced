@@ -1,0 +1,6 @@
+## synchronized和Lock的区别
+	Lock是java.util.concurrent.locks包下的接口，Lock实现提供了比synchronized关键字 更灵活、更广泛、粒度更细的锁操作，它能以更优雅的方式处理线程同步问题；
+	
+1，synchronized 是 Java的关键字，因此是Java的内置特性，是基于JVM层面实现的，其经过编译之后，会在同步块的前后分别形成monitorenter和monitorexit两个字节码指令；而Lock是一个Java接口，是基于JDK层面实现的，通过这个接口可以实现同步访问；
+
+2，采用synchronized方式不需要用户去手动释放锁，当synchronize方法或者synchronized代码块执行完之后，系统会自动让线程释放对锁的占用；而Lock则必须要用户去手动释放锁（发生异常时，不会自动释放锁），如果没有主动释放锁，就有可能导致死锁现象；

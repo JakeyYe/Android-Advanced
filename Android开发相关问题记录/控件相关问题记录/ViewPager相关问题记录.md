@@ -16,3 +16,5 @@
 #### ViewPager+Fragment(就是ViewPager中每个界面都使用一个Fragment来显示)使用懒加载
 	关键点是 Fragment.getUserVisibleHint()/setUserVisibleHint()方法（Fragment只有在ViewPager中这两个方法才有作用），获取提示（hint）判断Fragment是否真正显
 	示，以便懒加载布局。
+	还有一个关键点就是：setUserVisibleHint(boolean isVisibleToUser) 这个方法的回调不是和 Fragment 的生命周期方法同步的；所有正确的姿势是下面链接中的使用方式；	
+[ViewPager之setOffscreenPageLimit\(\)解析和实现懒加载 \- CSDN博客](http://blog.csdn.net/StrongerCoder/article/details/70158836)

@@ -1,5 +1,7 @@
 ## Android 开发中使用SQLite数据库
 
+	使用Facebook的stetho来做可视化学习数据库SQLite的操作
+
 [Android ：SQLlite数据库 使用手册 \- 简书](https://www.jianshu.com/p/8e3f294e2828)
 
 Android SQLite 使用的基本操作：
