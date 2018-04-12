@@ -22,13 +22,15 @@
 
 ##Map接口：键值对存储的数据结构
 
-  Hashtable:实现了一个key-value映射的哈希表，不允许null，同步的
+  Hashtable:实现了一个key-value映射的哈希表，不允许null（键和值都不允许为空），同步的（线程安全的）
   
-  HashMap:与Hashtable类似，不同之处是HashMap是非同步的，并且允许null
+  HashMap:与Hashtable类似，不同之处是HashMap是非同步的（非线程安全的），并且允许null（键和值都允许为空）
+  
+  LinkedHashMap:继承自HashMap，是使用链表存储数据的；
 
   WeakHashMap：是一种改进的HashMap,它对key实现“弱引用”，如果一个key不再被外界所引用，那么该key可以被GC回收了。
 
   TreeMap：HashMap中所有元素都将保持着某种固定的顺序。在Map中插入，删除和定位元素，HashMap是最好的选择，但如果要按自然顺序或自定义顺序遍历，那么TreeMap会更好。
 
 ###[HashMap博客介绍1](http://www.cnblogs.com/chenssy/p/3521565.html)
-###[HashMap博客介绍1](http://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/)
+###[HashMap博客介绍2](http://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/)

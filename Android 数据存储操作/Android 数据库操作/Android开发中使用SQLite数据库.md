@@ -50,6 +50,7 @@ Android SQLite 使用的基本操作：
 - 创建存储过程
 - 调用、查看、修改和删除存储过程
 
+[mysql添加外键 \- yccMelody \- 博客园](http://www.cnblogs.com/yccmelody/p/5416456.html)
 
 ### 注意点
 	SQL语句中的字符串是用单引号表示的，而不是双引号；

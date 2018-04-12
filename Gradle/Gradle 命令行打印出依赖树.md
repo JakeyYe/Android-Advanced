@@ -15,7 +15,7 @@
 	原始命令行是
 	gradle <subproject>:dependences
 
-#### .gradlew app:dependencies --configuration compile 将compile配置的依赖树打印出来
+#### ./gradlew app:dependencies --configuration compile 将compile配置的依赖树打印出来
 	Window平台是这样写：
 	gradlew app:dependencies --configuration compile
 

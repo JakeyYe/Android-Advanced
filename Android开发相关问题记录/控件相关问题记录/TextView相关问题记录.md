@@ -1,5 +1,8 @@
 ## TextView相关问题记录
 
+Chronmeter是继承自TextView的，可以直接用来展示时间进度的控件；
+[Android Chronometer（计时器） \- 简书](https://www.jianshu.com/p/9630285e7cc7)
+
 TextView.setCompoundDrawables(四个参数)；设置TextView四周上的Drawable图标；不过还要加上setBounds()方法；
 不过可以直接使用setCompoundDrawablesWIthIntrinsicBounds()方法，这个方法相当于将setBounds()方法合并进去了；
 
